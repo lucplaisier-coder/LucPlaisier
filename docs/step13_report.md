@@ -33,4 +33,4 @@ A8 the input whitelist and blacklist.
 
 ## What I need from you
 
-**Sign off step 13.** Next on your roadmap: step 14 (manuscript).
+**Signed off by Lucas on 24 Nov 2026 ("approved").** Next on the roadmap: step 14 (manuscript).

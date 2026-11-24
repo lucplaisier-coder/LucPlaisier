@@ -24,7 +24,7 @@ The full locked specification, with its change log, is in
 | 10 Financial evaluation | Signed off 24 Nov 2026 ([report](docs/step10_report.md), `decision_records/step10_signoff.json`) |
 | 11 Robustness | 2015 run once and signed off 24 Nov 2026 ([report](docs/step11_report.md), `decision_records/step11_signoff.json`): consistent with 2014 |
 | 12 Interpretability | Signed off 24 Nov 2026 ([report](docs/step12_report.md), `decision_records/step12_signoff.json`) |
-| 13 Final figures and tables | Awaiting sign-off ([report](docs/step13_report.md), [all tables](docs/final_tables.md)) |
+| 13 Final figures and tables | Signed off 24 Nov 2026 (`decision_records/step13_signoff.json`, [report](docs/step13_report.md), [all tables](docs/final_tables.md)) |
 | 13+ Final figures, manuscript, reproducibility audit | Not started |
 
 ## Run everything
