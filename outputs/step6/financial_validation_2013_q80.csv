@@ -1,0 +1,4 @@
+approach,loans,invested_usd,charge_off_rate,principal_loss_rate,net_cash_gain_per_dollar,net_cash_gain_per_dollar_sf0,mean_int_rate_pct
+A. Fund-all,100422,1272089850.00000,0.12326,0.06001,0.09848,0.10950,13.36860
+B. Platform rule,80337,1019927825.00000,0.11816,0.05699,0.09724,0.10825,13.00302
+C. Logit,80337,1062405375.00000,0.11138,0.05520,0.10141,0.11246,13.20255

@@ -1,0 +1,10 @@
+input,validation_auc_2013,alarm_threshold,alarm
+int_rate,0.6491,0.8000,False
+sub_grade_ord,0.6490,0.8000,False
+fico_mid,0.5931,0.8000,False
+log_annual_inc,0.5925,0.8000,False
+dti,0.5640,0.8000,False
+home_ownership,0.5519,0.8000,False
+purpose,0.5341,0.8000,False
+loan_amnt,0.5271,0.8000,False
+emp_length_ord,0.5260,0.8000,False

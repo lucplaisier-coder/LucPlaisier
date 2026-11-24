@@ -1,0 +1,14 @@
+{
+  "decision_id": "STEP6-SIGNOFF-2026-11-24",
+  "date_local": "2026-11-24",
+  "timezone": "Europe/Amsterdam",
+  "approved_by": "user (Lucas)",
+  "authorization_text": "approved",
+  "authorization_context": "Reply to the step 6 report (docs/step6_report.md, PR #2), which asked to confirm two implementation details.",
+  "approved_details": [
+    "Grades F and G merged into one selection stratum (F.7 rule: G has 179 loans in 2014, fewer than 200; counts only).",
+    "Loans kept per stratum = floor(0.8 * n + 0.5); seed-42 random tie-break used for model PD ties as well as the platform rule."
+  ],
+  "logit_C_chosen_on_2013": 0.01,
+  "sealed_2014_2015_outcomes_inspected": false
+}
