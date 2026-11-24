@@ -1,5 +1,7 @@
 # Step 7 report: adding HistGB (for Lucas's sign-off)
 
+**Status: signed off by Lucas on 24 Nov 2026, including the defaults in section 5** (`decision_records/step7_signoff.json`).
+
 Date: 24 Nov 2026. Code: `src/step7_histgb.py` (runs in about 15 seconds after step 5).
 All numbers come from `outputs/step7/`. **These are 2013 validation results, "used for tuning".
 They are not the test result and have no confidence intervals.** 2014 and 2015 stay sealed.
