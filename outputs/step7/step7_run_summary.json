@@ -1,0 +1,63 @@
+{
+  "step": "Roadmap step 7: add HistGB",
+  "run_utc": "2026-11-24T20:52:07+00:00",
+  "runtime_seconds": 10.6,
+  "scikit_learn": "1.9.1",
+  "inputs": [
+    "fico_mid",
+    "dti",
+    "log_annual_inc",
+    "emp_length_ord",
+    "loan_amnt",
+    "sub_grade_ord",
+    "int_rate",
+    "home_ownership",
+    "purpose"
+  ],
+  "hgb_fixed_settings": {
+    "learning_rate": 0.05,
+    "min_samples_leaf": 200,
+    "random_state": 42,
+    "early_stopping": false
+  },
+  "hgb_grid": [
+    [
+      3,
+      200
+    ],
+    [
+      3,
+      500
+    ],
+    [
+      5,
+      200
+    ],
+    [
+      5,
+      500
+    ]
+  ],
+  "hgb_chosen": {
+    "max_depth": 3,
+    "max_iter": 200
+  },
+  "logit_C_used": 0.01,
+  "logit_converged": true,
+  "gate4_checks": {
+    "no_leakage_alarm": true,
+    "grid_completed": true,
+    "early_stopping_off_all_fits": true,
+    "probabilities_between_0_and_1": true
+  },
+  "gate4_automatic_checks_passed": true,
+  "chosen_hgb_validation_auc": 0.6648858521795963,
+  "plan_B12_expected_auc_range": [
+    0.65,
+    0.72
+  ],
+  "fg_merged": true,
+  "selection_rate": 0.8,
+  "seed": 42,
+  "sealed_2014_2015_outcomes_opened": false
+}

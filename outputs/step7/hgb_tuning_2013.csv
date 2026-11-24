@@ -1,0 +1,5 @@
+max_depth,max_iter,trees_built,validation_auc,validation_brier,validation_ece,chosen
+3,200,200,0.66489,0.10433,0.01356,True
+3,500,500,0.66359,0.10442,0.01248,False
+5,200,200,0.66319,0.10442,0.01257,False
+5,500,500,0.65861,0.10480,0.01327,False
