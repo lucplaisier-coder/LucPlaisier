@@ -1,0 +1,13 @@
+contrast,role,metric,difference,ci95_low,ci95_high,year
+D. HGB minus C. Logit,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.000546,0.000093,0.001015,2014
+D. HGB minus B. Platform rule,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.003357,0.002617,0.004084,2014
+C. Logit minus B. Platform rule,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.002810,0.002096,0.003522,2014
+D. HGB minus A. Fund-all,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.002682,0.002111,0.003223,2014
+C. Logit minus A. Fund-all,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.002136,0.001600,0.002689,2014
+B. Platform rule minus A. Fund-all,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,-0.000675,-0.001347,-0.000056,2014
+D. HGB minus C. Logit,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.000444,0.000109,0.000768,2015
+D. HGB minus B. Platform rule,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.001406,0.000811,0.002031,2015
+C. Logit minus B. Platform rule,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.000963,0.000341,0.001572,2015
+D. HGB minus A. Fund-all,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.001855,0.001437,0.002271,2015
+C. Logit minus A. Fund-all,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.001412,0.000975,0.001851,2015
+B. Platform rule minus A. Fund-all,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.000449,-0.000085,0.000947,2015

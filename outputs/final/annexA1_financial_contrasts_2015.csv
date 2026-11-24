@@ -1,0 +1,7 @@
+Comparison,Role,Net cash gain per $ [95%],Charge-off rate [95%],Principal loss [95%]
+D. HGB minus C. Logit,primary,"+0.044 c [+0.011 c, +0.076 c]","+0.00 pts [-0.05, +0.06]","-0.11 pts [-0.13, -0.08]"
+D. HGB minus B. Platform rule,primary,"+0.139 c [+0.081 c, +0.201 c]","-0.32 pts [-0.40, -0.23]","-0.06 pts [-0.12, -0.01]"
+C. Logit minus B. Platform rule,secondary,"+0.096 c [+0.034 c, +0.156 c]","-0.32 pts [-0.41, -0.24]","+0.04 pts [-0.02, +0.09]"
+D. HGB minus A. Fund-all,secondary,"+0.183 c [+0.142 c, +0.225 c]","-0.99 pts [-1.06, -0.91]","-0.47 pts [-0.51, -0.43]"
+C. Logit minus A. Fund-all,secondary,"+0.139 c [+0.096 c, +0.183 c]","-0.99 pts [-1.07, -0.91]","-0.36 pts [-0.40, -0.32]"
+B. Platform rule minus A. Fund-all,secondary,"+0.044 c [-0.009 c, +0.093 c]","-0.67 pts [-0.74, -0.60]","-0.40 pts [-0.45, -0.35]"

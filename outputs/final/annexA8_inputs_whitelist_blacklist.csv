@@ -1,0 +1,18 @@
+input,status
+fico_mid,whitelist (frozen Gate 2)
+dti,whitelist (frozen Gate 2)
+log_annual_inc,whitelist (frozen Gate 2)
+emp_length_ord,whitelist (frozen Gate 2)
+loan_amnt,whitelist (frozen Gate 2)
+sub_grade_ord,whitelist (frozen Gate 2)
+int_rate,whitelist (frozen Gate 2)
+home_ownership,whitelist (frozen Gate 2)
+purpose,whitelist (frozen Gate 2)
+loan_status,target only
+"total_pymnt*, total_rec_*, recoveries, collection_recovery_fee",outcome (post-origination)
+"last_pymnt_*, next_pymnt_d, out_prncp*, last_credit_pull_d, last_fico_range_*",post-origination
+"pymnt_plan, hardship_*, debt_settlement_*, settlement_*, funded_amnt_inv",post-origination
+verification_status,"excluded (timing, G2-VERIFY-EXCLUDE)"
+grade,selection stratum only
+"term, installment","constant / determined by amount, rate, term"
+"id, member_id, url, desc, title, emp_title, zip_code, addr_state, policy_code","identifiers, free text, location, filter"

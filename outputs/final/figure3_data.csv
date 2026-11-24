@@ -1,0 +1,11 @@
+input,mean_auc_drop,sd_over_repeats,label,base_auc_2014
+PLATFORM PRICING BLOCK,0.094705,0.002042,Platform pricing block (sub-grade + rate),0.671739
+int_rate,0.061573,0.001507,Interest rate,0.671739
+log_annual_inc,0.023716,0.001241,Log annual income,0.671739
+loan_amnt,0.007527,0.000358,Loan amount,0.671739
+dti,0.005536,0.000275,Debt-to-income,0.671739
+sub_grade_ord,0.005185,0.000408,Sub-grade,0.671739
+fico_mid,0.003886,0.000281,FICO (midpoint),0.671739
+purpose,0.002391,0.000381,Loan purpose,0.671739
+home_ownership,0.002141,0.000185,Home ownership,0.671739
+emp_length_ord,0.001956,0.000209,Employment length,0.671739
