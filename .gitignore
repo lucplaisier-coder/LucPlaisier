@@ -1,0 +1,10 @@
+# Raw and loan-level data are never committed (control document F.2)
+data/
+*.csv.gz
+*.parquet
+# Python / notebook clutter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+kaggle.json
