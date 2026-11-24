@@ -1,0 +1,7 @@
+vintage,split,research_sample_loans,resolved_share,mean_int_rate_working_pct,mean_int_rate_stored_pct,rate_fixes_applied,charge_off_rate
+2010,train,8466,1,11.0914,11.088,3,0.09945665012993149
+2011,train,14101,1,10.5548,10.5537,3,0.10630451741011276
+2012,train,43470,1,12.6278,12.6264,8,0.13579480101219232
+2013,validation,100422,1,13.3686,13.367,18,0.12325984346059628
+2014,test,162570,1,12.4672,12.4654,35,SEALED until step 8
+2015,robustness,282787,0.99948,11.2768,11.275,81,SEALED until step 8

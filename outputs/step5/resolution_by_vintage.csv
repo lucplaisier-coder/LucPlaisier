@@ -1,0 +1,7 @@
+vintage,candidate_loans,resolved,unresolved,unresolved_Current,unresolved_In Grace Period,unresolved_Late (16-30 days),unresolved_Late (31-120 days),unresolved_Default,resolved_share,default_status_share,passes_99pct_rule,default_sensitivity_needed
+2010,8466,8466,0,0,0,0,0,0,1,0,True,False
+2011,14101,14101,0,0,0,0,0,0,1,0,True,False
+2012,43470,43470,0,0,0,0,0,0,1,0,True,False
+2013,100422,100422,0,0,0,0,0,0,1,0,True,False
+2014,162570,162570,0,0,0,0,0,0,1,0,True,False
+2015,282934,282787,147,72,9,5,61,0,0.99948,0,True,False

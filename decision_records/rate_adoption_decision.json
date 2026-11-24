@@ -1,0 +1,22 @@
+{
+  "decision_id": "G2-RATE-2026-11-24-v1",
+  "created_utc": "2026-11-24T13:16:15.077040+00:00",
+  "decision_date_local": "2026-11-24",
+  "timezone": "Europe/Amsterdam",
+  "approved_by": "user",
+  "authorization_text": "Yes, adopt the sourced-rate rule for the 148 cases and continue with verification-status timing. Explain each step in easy language. Keep the raw file unchanged and don\u2019t start modeling or freeze features yet.",
+  "adopted": true,
+  "approved_ledger": "approved_listing_rate_ledger_v1.csv",
+  "approved_ledger_sha256": "0de3910393aa11e0dda166ca17b7b1b1e68723682641c2a5a4a1f90844b36dfe",
+  "source_proposal_sha256": "b24c4254e08406c9b14e461c3cc91db290721ca158a8e748ec8aa4ea6f0e9d85",
+  "source_proposal_zip_sha256": "08f872debc4a7d5276db426e99a7c895c57c4c33070dd49c925e2d41fd8e36ad",
+  "rate_source_supplement_only": true,
+  "original_control_file_modified": false,
+  "features_added_or_removed": [],
+  "sample_membership_changed": false,
+  "raw_file_modified": false,
+  "models_started": false,
+  "preprocessing_fitted": false,
+  "feature_list_frozen": false,
+  "verification_status_treatment_adopted": false
+}

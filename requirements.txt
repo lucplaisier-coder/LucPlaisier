@@ -1,0 +1,6 @@
+# Pinned versions (control document F.14). Python 3.11 or newer.
+pandas==2.3.3
+numpy==2.3.5
+pyarrow==22.0.0
+scikit-learn==1.9.1
+kaggle==2.2.5
