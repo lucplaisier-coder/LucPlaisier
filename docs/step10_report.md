@@ -50,7 +50,7 @@ instead. This is the simplest evidence that within-grade selection works as inte
 
 **Main table (output 6).** These are the same numbers as step 9: HGB 8.01 c, logit 7.95 c, platform
 7.68 c and fund-all 7.74 c. HGB − Logit is +0.054 c [+0.009, +0.100] and HGB − Platform is +0.332 c
-[+0.259, +0.404]. All four approach comparisons and their intervals are in `output6b`.
+[+0.259, +0.404]. All six pairwise comparisons and their intervals are in `output6b`.
 
 ## What I need from you
 
