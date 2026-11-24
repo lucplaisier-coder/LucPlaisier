@@ -21,7 +21,7 @@ The full locked specification, with its change log, is in
 | 7 Add HistGB | Signed off 24 Nov 2026 ([report](docs/step7_report.md), `decision_records/step7_signoff.json`) |
 | 8 Methodology freeze | FROZEN 24 Nov 2026 ([record](docs/methodology_freeze_v1.md), `decision_records/methodology_freeze_v1.json`) |
 | 9 Untouched 2014 test | Run once and signed off 24 Nov 2026 ([report](docs/step9_report.md), `decision_records/step9_signoff.json`): "AI adds economic value" |
-| **10 Financial evaluation** | **Built, awaiting sign-off** ([report](docs/step10_report.md)) |
+| 10 Financial evaluation | Signed off 24 Nov 2026 ([report](docs/step10_report.md), `decision_records/step10_signoff.json`) |
 | 11+ Robustness (2015 still sealed), interpretability | Not started |
 
 ## Run everything
