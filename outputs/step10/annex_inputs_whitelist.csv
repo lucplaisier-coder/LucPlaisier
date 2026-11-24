@@ -1,0 +1,10 @@
+input,type,status
+fico_mid,numeric,whitelist (frozen Gate 2)
+dti,numeric,whitelist (frozen Gate 2)
+log_annual_inc,numeric,whitelist (frozen Gate 2)
+emp_length_ord,numeric,whitelist (frozen Gate 2)
+loan_amnt,numeric,whitelist (frozen Gate 2)
+sub_grade_ord,numeric,whitelist (frozen Gate 2)
+int_rate,numeric,whitelist (frozen Gate 2)
+home_ownership,category,whitelist (frozen Gate 2)
+purpose,category,whitelist (frozen Gate 2)

@@ -1,0 +1,7 @@
+contrast,role,metric,difference,ci95_low,ci95_high
+D. HGB minus C. Logit,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.000546,0.000093,0.001015
+D. HGB minus B. Platform rule,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.003357,0.002617,0.004084
+C. Logit minus B. Platform rule,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.002810,0.002096,0.003522
+D. HGB minus A. Fund-all,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.002682,0.002111,0.003223
+C. Logit minus A. Fund-all,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.002136,0.001600,0.002689
+B. Platform rule minus A. Fund-all,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,-0.000675,-0.001347,-0.000056

@@ -1,0 +1,5 @@
+year,model,auc,brier,ece
+"2013 validation (dev fit 2010-2012, used for tuning)",Logit,0.66521,0.10462,0.01733
+"2013 validation (dev fit 2010-2012, used for tuning)",HGB,0.66489,0.10433,0.01356
+2014 test (final fit 2010-2013),Logit,0.66971,0.11370,0.01206
+2014 test (final fit 2010-2013),HGB,0.67174,0.11345,0.01432
