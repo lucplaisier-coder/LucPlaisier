@@ -1,5 +1,7 @@
 # Step 6 report: logistic regression + platform benchmark (for Lucas's sign-off)
 
+**Status: signed off by Lucas on 24 Nov 2026, including both details in section 5** (`decision_records/step6_signoff.json`).
+
 Date: 24 Nov 2026. Code: `src/step6_baselines.py` (runs in under 10 seconds after step 5).
 All numbers come from `outputs/step6/`. **These are 2013 validation results, "used for tuning".
 They are not the test result and have no confidence intervals yet.** 2014 and 2015 stay sealed.

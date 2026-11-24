@@ -17,7 +17,7 @@ The full locked specification, with its change log, is in
 | 1-4 Data audit, timing checks, rate fix, preparation rules | Closed 24 Nov 2026 (decision records in `decision_records/`) |
 | 5 Clean dataset | Signed off 24 Nov 2026 ([report](docs/step5_report.md), `decision_records/step5_signoff.json`) |
 | Gate 2 feature freeze | Nine inputs frozen 24 Nov 2026 (`src/features.py`, `decision_records/gate2_feature_freeze.json`) |
-| **6 Baseline logistic + platform benchmark** | **Built, awaiting sign-off** ([report](docs/step6_report.md)) |
+| 6 Baseline logistic + platform benchmark | Signed off 24 Nov 2026 ([report](docs/step6_report.md), `decision_records/step6_signoff.json`) |
 | 7+ HistGB, methodology freeze, test | Not started |
 
 ## Run everything
