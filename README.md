@@ -18,7 +18,8 @@ The full locked specification, with its change log, is in
 | 5 Clean dataset | Signed off 24 Nov 2026 ([report](docs/step5_report.md), `decision_records/step5_signoff.json`) |
 | Gate 2 feature freeze | Nine inputs frozen 24 Nov 2026 (`src/features.py`, `decision_records/gate2_feature_freeze.json`) |
 | 6 Baseline logistic + platform benchmark | Signed off 24 Nov 2026 ([report](docs/step6_report.md), `decision_records/step6_signoff.json`) |
-| 7+ HistGB, methodology freeze, test | Not started |
+| **7 Add HistGB** | **Built, awaiting sign-off** ([report](docs/step7_report.md)) |
+| 8+ Methodology freeze, test | Not started |
 
 ## Run everything
 
@@ -33,6 +34,7 @@ pip install -r requirements.txt
 # put accepted_2007_to_2018Q4.csv.gz in data/raw/   (or use --source, see below)
 python -m src.step5_build_clean_dataset
 python -m src.step6_baselines
+python -m src.step7_histgb
 ```
 
 ## Getting the data
@@ -66,12 +68,13 @@ src/inputs.py                     fixed per-loan input rules P1-P9 (G2-PREP-2026
 src/step5_build_clean_dataset.py  step 5 entry point
 src/load_clean.py                 how later steps open the clean files (fingerprint check + seal)
 src/features.py                   the FROZEN list of nine inputs (Gate 2)
-src/models.py                     logistic regression pipeline (preparation fitted on training rows only)
+src/models.py                     logit and HistGB pipelines (preparation fitted on training rows only)
 src/selection.py                  80%-within-grade selection; platform rule
 src/metrics.py                    AUC, Brier, ECE and the F.8 money formulas
 src/step6_baselines.py            step 6 entry point
+src/step7_histgb.py               step 7 entry point
 decision_records/                 approved step-4 decisions, unchanged, with SHA-256 manifest
-outputs/step5/, outputs/step6/     summary tables and figures from each step (no loan-level data)
+outputs/step5/ ... outputs/step7/   summary tables and figures from each step (no loan-level data)
 notebooks/run_all_colab.ipynb     one-click rerun
 docs/                             control document and step reports
 data/                             raw and clean loan-level data (git-ignored, created by the code)
