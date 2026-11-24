@@ -1,0 +1,21 @@
+{
+  "label": "dry run",
+  "test_year": 2013,
+  "fit_years": [
+    2010,
+    2011,
+    2012
+  ],
+  "fit_loans": 66037,
+  "test_loans": 100422,
+  "logit_converged": true,
+  "fg_merged": true,
+  "bootstrap_draws": 1000,
+  "categories": {
+    "AI adds economic value": false,
+    "AI adds predictive but not economic value": false,
+    "Simpler model preferable": true,
+    "Platform pricing hard to beat": false
+  },
+  "runtime_seconds": 44.7
+}

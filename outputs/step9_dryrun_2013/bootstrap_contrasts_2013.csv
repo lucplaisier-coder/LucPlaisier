@@ -1,0 +1,26 @@
+contrast,role,metric,difference,ci95_low,ci95_high
+D. HGB minus C. Logit,primary,net_cash_gain_per_dollar,0.000095,-0.000411,0.000593
+D. HGB minus C. Logit,secondary,charge_off_rate,-0.000299,-0.001148,0.000545
+D. HGB minus C. Logit,secondary,principal_loss_rate,-0.000644,-0.001100,-0.000202
+D. HGB minus C. Logit,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.000097,-0.000415,0.000600
+D. HGB minus B. Platform rule,primary,net_cash_gain_per_dollar,0.004264,0.003285,0.005218
+D. HGB minus B. Platform rule,secondary,charge_off_rate,-0.007083,-0.008444,-0.005577
+D. HGB minus B. Platform rule,secondary,principal_loss_rate,-0.002425,-0.003235,-0.001572
+D. HGB minus B. Platform rule,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.004309,0.003320,0.005273
+C. Logit minus B. Platform rule,secondary,net_cash_gain_per_dollar,0.004169,0.003192,0.005036
+C. Logit minus B. Platform rule,secondary,charge_off_rate,-0.006784,-0.008095,-0.005412
+C. Logit minus B. Platform rule,secondary,principal_loss_rate,-0.001781,-0.002537,-0.000938
+C. Logit minus B. Platform rule,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.004212,0.003224,0.005088
+D. HGB minus A. Fund-all,secondary,net_cash_gain_per_dollar,0.003026,0.002368,0.003746
+D. HGB minus A. Fund-all,secondary,charge_off_rate,-0.012178,-0.013335,-0.011085
+D. HGB minus A. Fund-all,secondary,principal_loss_rate,-0.005445,-0.006066,-0.004889
+D. HGB minus A. Fund-all,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.003062,0.002396,0.003790
+C. Logit minus A. Fund-all,secondary,net_cash_gain_per_dollar,0.002931,0.002262,0.003582
+C. Logit minus A. Fund-all,secondary,charge_off_rate,-0.011879,-0.013063,-0.010736
+C. Logit minus A. Fund-all,secondary,principal_loss_rate,-0.004801,-0.005384,-0.004203
+C. Logit minus A. Fund-all,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,0.002965,0.002289,0.003623
+B. Platform rule minus A. Fund-all,secondary,net_cash_gain_per_dollar,-0.001238,-0.002039,-0.000404
+B. Platform rule minus A. Fund-all,secondary,charge_off_rate,-0.005095,-0.006177,-0.004064
+B. Platform rule minus A. Fund-all,secondary,principal_loss_rate,-0.003020,-0.003712,-0.002335
+B. Platform rule minus A. Fund-all,sensitivity (fee 0%),net_cash_gain_per_dollar_sf0,-0.001247,-0.002055,-0.000404
+D. HGB minus C. Logit,secondary,auc,-0.000319,-0.001792,0.001073

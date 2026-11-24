@@ -44,14 +44,28 @@ def load_dev_outcomes() -> pd.DataFrame:
     return _checked_read("step5_outcomes_2010_2013.parquet")
 
 
-def load_sealed_outcomes(methodology_frozen_on: str | None = None) -> pd.DataFrame:
+def load_sealed_outcomes(year: int, methodology_frozen_on: str | None = None) -> pd.DataFrame:
     """
-    Target and cash fields for 2014-2015. Pass the date of the step 8 freeze,
-    e.g. load_sealed_outcomes(methodology_frozen_on="2026-11-26").
-    Without it, this function refuses.
+    Target and cash fields for ONE sealed year (2014 or 2015).
+
+    * Refuses unless the step 8 freeze date is given AND matches the signed
+      record in decision_records/methodology_freeze_v1.json.
+    * Returns only the requested year's rows (a row filter inside the parquet
+      reader), so opening 2014 never hands back any 2015 outcome.
     """
-    if not methodology_frozen_on:
+    if year not in config.SEALED_YEARS:
+        raise ValueError(f"{year} is not a sealed year")
+    record = json.loads((config.DECISION_DIR / "methodology_freeze_v1.json").read_text())
+    if (not methodology_frozen_on or record.get("status") != "FROZEN"
+            or methodology_frozen_on != record["date_local"]):
         raise PermissionError(
             "2014-2015 outcomes are sealed until the step 8 methodology freeze."
         )
-    return _checked_read("SEALED_step5_outcomes_2014_2015.parquet")
+    name = "SEALED_step5_outcomes_2014_2015.parquet"
+    summary = json.loads((config.STEP5_OUT / "step5_run_summary.json").read_text())
+    path = config.CLEAN_DIR / name
+    if hashlib.sha256(path.read_bytes()).hexdigest() != summary["clean_files"][name]["sha256"]:
+        raise ValueError(f"{name} changed since step 5 was run.")
+    out = pd.read_parquet(path, filters=[("vintage", "==", year)])
+    assert set(out["vintage"]) == {year}
+    return out
