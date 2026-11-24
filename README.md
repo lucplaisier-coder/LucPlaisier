@@ -23,7 +23,7 @@ The full locked specification, with its change log, is in
 | 9 Untouched 2014 test | Run once and signed off 24 Nov 2026 ([report](docs/step9_report.md), `decision_records/step9_signoff.json`): "AI adds economic value" |
 | 10 Financial evaluation | Signed off 24 Nov 2026 ([report](docs/step10_report.md), `decision_records/step10_signoff.json`) |
 | 11 Robustness | 2015 run once and signed off 24 Nov 2026 ([report](docs/step11_report.md), `decision_records/step11_signoff.json`): consistent with 2014 |
-| **12 Interpretability** | **Built, awaiting sign-off** ([report](docs/step12_report.md)) |
+| 12 Interpretability | Signed off 24 Nov 2026 ([report](docs/step12_report.md), `decision_records/step12_signoff.json`) |
 | 13+ Final figures, manuscript, reproducibility audit | Not started |
 
 ## Run everything
