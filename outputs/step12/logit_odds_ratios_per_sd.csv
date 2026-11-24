@@ -1,0 +1,6 @@
+input,label,sd_2010_2013,coefficient_per_sd,odds_ratio_per_sd,reading
+fico_mid,FICO (midpoint),31.82431,-0.15899,0.85301,"+1 SD -> odds of charge-off x0.853, holding sub-grade and rate fixed"
+dti,Debt-to-income,7.59991,0.10011,1.10529,"+1 SD -> odds of charge-off x1.105, holding sub-grade and rate fixed"
+log_annual_inc,Log annual income,0.52799,-0.27123,0.76244,"+1 SD -> odds of charge-off x0.762, holding sub-grade and rate fixed"
+emp_length_ord,Employment length,3.49660,0.01132,1.01138,"+1 SD -> odds of charge-off x1.011, holding sub-grade and rate fixed"
+loan_amnt,Loan amount,7241.45876,0.11528,1.12219,"+1 SD -> odds of charge-off x1.122, holding sub-grade and rate fixed"

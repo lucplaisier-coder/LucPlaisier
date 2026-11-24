@@ -1,0 +1,101 @@
+input,repeat,auc_drop
+fico_mid,0,0.003966
+fico_mid,1,0.003849
+fico_mid,2,0.003465
+fico_mid,3,0.003936
+fico_mid,4,0.003680
+fico_mid,5,0.003941
+fico_mid,6,0.004396
+fico_mid,7,0.004227
+fico_mid,8,0.003826
+fico_mid,9,0.003575
+dti,0,0.005928
+dti,1,0.005519
+dti,2,0.005525
+dti,3,0.005060
+dti,4,0.005959
+dti,5,0.005327
+dti,6,0.005661
+dti,7,0.005474
+dti,8,0.005598
+dti,9,0.005305
+log_annual_inc,0,0.022894
+log_annual_inc,1,0.024722
+log_annual_inc,2,0.022185
+log_annual_inc,3,0.024006
+log_annual_inc,4,0.025071
+log_annual_inc,5,0.022301
+log_annual_inc,6,0.022697
+log_annual_inc,7,0.023494
+log_annual_inc,8,0.023880
+log_annual_inc,9,0.025905
+emp_length_ord,0,0.001878
+emp_length_ord,1,0.002170
+emp_length_ord,2,0.001834
+emp_length_ord,3,0.001810
+emp_length_ord,4,0.002020
+emp_length_ord,5,0.001899
+emp_length_ord,6,0.002334
+emp_length_ord,7,0.002075
+emp_length_ord,8,0.001582
+emp_length_ord,9,0.001959
+loan_amnt,0,0.007410
+loan_amnt,1,0.008111
+loan_amnt,2,0.007372
+loan_amnt,3,0.007554
+loan_amnt,4,0.007704
+loan_amnt,5,0.007432
+loan_amnt,6,0.007401
+loan_amnt,7,0.008094
+loan_amnt,8,0.006985
+loan_amnt,9,0.007208
+sub_grade_ord,0,0.004935
+sub_grade_ord,1,0.005289
+sub_grade_ord,2,0.005324
+sub_grade_ord,3,0.005695
+sub_grade_ord,4,0.004617
+sub_grade_ord,5,0.004620
+sub_grade_ord,6,0.005082
+sub_grade_ord,7,0.004976
+sub_grade_ord,8,0.005716
+sub_grade_ord,9,0.005596
+int_rate,0,0.063208
+int_rate,1,0.062305
+int_rate,2,0.058512
+int_rate,3,0.063766
+int_rate,4,0.061132
+int_rate,5,0.062671
+int_rate,6,0.060811
+int_rate,7,0.060747
+int_rate,8,0.061615
+int_rate,9,0.060962
+home_ownership,0,0.002236
+home_ownership,1,0.002414
+home_ownership,2,0.002112
+home_ownership,3,0.002096
+home_ownership,4,0.002122
+home_ownership,5,0.002261
+home_ownership,6,0.002348
+home_ownership,7,0.001923
+home_ownership,8,0.001801
+home_ownership,9,0.002099
+purpose,0,0.003234
+purpose,1,0.002502
+purpose,2,0.002168
+purpose,3,0.002575
+purpose,4,0.002579
+purpose,5,0.002512
+purpose,6,0.002068
+purpose,7,0.002302
+purpose,8,0.001934
+purpose,9,0.002031
+PLATFORM PRICING BLOCK,0,0.098982
+PLATFORM PRICING BLOCK,1,0.093731
+PLATFORM PRICING BLOCK,2,0.094067
+PLATFORM PRICING BLOCK,3,0.095549
+PLATFORM PRICING BLOCK,4,0.094923
+PLATFORM PRICING BLOCK,5,0.093953
+PLATFORM PRICING BLOCK,6,0.092337
+PLATFORM PRICING BLOCK,7,0.097182
+PLATFORM PRICING BLOCK,8,0.093355
+PLATFORM PRICING BLOCK,9,0.092975
