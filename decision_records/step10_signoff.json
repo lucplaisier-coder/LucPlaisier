@@ -1,0 +1,9 @@
+{
+  "decision_id": "STEP10-SIGNOFF-2026-11-24",
+  "date_local": "2026-11-24",
+  "timezone": "Europe/Amsterdam",
+  "approved_by": "user (Lucas)",
+  "authorization_text": "approved",
+  "authorization_context": "Reply to the step 10 report (docs/step10_report.md, PR #6).",
+  "year_2015_opened": false
+}
