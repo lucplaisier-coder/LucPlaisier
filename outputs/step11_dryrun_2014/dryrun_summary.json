@@ -1,0 +1,24 @@
+{
+  "label": "robustness dry run",
+  "test_year": 2014,
+  "fit_years": [
+    2010,
+    2011,
+    2012,
+    2013
+  ],
+  "fit_loans": 166459,
+  "test_loans": 162570,
+  "logit_converged": true,
+  "fg_merged": true,
+  "bootstrap_draws": 1000,
+  "categories": {
+    "AI adds economic value": true,
+    "AI adds predictive but not economic value": false,
+    "Simpler model preferable": false,
+    "Platform pricing hard to beat": false
+  },
+  "runtime_seconds": 68.2,
+  "reproduces_step9_exactly": true,
+  "consistent_with_2014_if_this_were_2015": true
+}

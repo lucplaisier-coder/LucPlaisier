@@ -1,0 +1,9 @@
+{
+  "decision_id": "STEP11-SIGNOFF-2026-11-24",
+  "date_local": "2026-11-24",
+  "timezone": "Europe/Amsterdam",
+  "approved_by": "user (Lucas)",
+  "authorization_text": "approved",
+  "authorization_context": "Reply to the step 11 report (docs/step11_report.md, PR #7).",
+  "result_accepted": "2015 run once (21:24 UTC, code 4cf52af): consistent with 2014 (AI adds economic value). Grade groups A-B, C, D-G reported."
+}

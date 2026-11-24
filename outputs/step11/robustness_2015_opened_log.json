@@ -1,0 +1,33 @@
+{
+  "label": "robustness",
+  "test_year": 2015,
+  "fit_years": [
+    2010,
+    2011,
+    2012,
+    2013
+  ],
+  "fit_loans": 166459,
+  "test_loans": 282787,
+  "logit_converged": true,
+  "fg_merged": true,
+  "bootstrap_draws": 1000,
+  "categories": {
+    "AI adds economic value": true,
+    "AI adds predictive but not economic value": false,
+    "Simpler model preferable": false,
+    "Platform pricing hard to beat": false
+  },
+  "runtime_seconds": 132.2,
+  "categories_2014": {
+    "AI adds economic value": true,
+    "AI adds predictive but not economic value": false,
+    "Simpler model preferable": false,
+    "Platform pricing hard to beat": false
+  },
+  "consistent_with_2014": true,
+  "rule": "G4: consistent = exactly the same F.11 categories hold in 2015 as in 2014",
+  "opened_utc": "2026-11-24T21:24:17+00:00",
+  "freeze_record_sha256": "e653b82d6e3c87b579d1f0176ed315c120f88e08e243a6e0f10dbaf7f35ca297",
+  "code_commit": "4cf52af500960cfa5b8958e33934f80707204ff2"
+}

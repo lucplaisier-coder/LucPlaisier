@@ -22,7 +22,8 @@ The full locked specification, with its change log, is in
 | 8 Methodology freeze | FROZEN 24 Nov 2026 ([record](docs/methodology_freeze_v1.md), `decision_records/methodology_freeze_v1.json`) |
 | 9 Untouched 2014 test | Run once and signed off 24 Nov 2026 ([report](docs/step9_report.md), `decision_records/step9_signoff.json`): "AI adds economic value" |
 | 10 Financial evaluation | Signed off 24 Nov 2026 ([report](docs/step10_report.md), `decision_records/step10_signoff.json`) |
-| 11+ Robustness (2015 still sealed), interpretability | Not started |
+| 11 Robustness | 2015 run once and signed off 24 Nov 2026 ([report](docs/step11_report.md), `decision_records/step11_signoff.json`): consistent with 2014 |
+| 12+ Interpretability, final outputs | Not started |
 
 ## Run everything
 
@@ -41,6 +42,8 @@ python -m src.step7_histgb
 python -m src.step9_test_2014 --dry-run   # rehearsal on 2013
 python -m src.step9_test_2014 --unseal    # the one-time 2014 test
 python -m src.step10_financial_evaluation
+python -m src.step11_robustness --dry-run   # rehearsal with 2014 as stand-in
+python -m src.step11_robustness --unseal    # the one-time 2015 run
 ```
 
 ## Getting the data
@@ -81,6 +84,7 @@ src/step6_baselines.py            step 6 entry point
 src/step7_histgb.py               step 7 entry point
 src/step9_test_2014.py            step 9: the one-time 2014 test (per the freeze record)
 src/step10_financial_evaluation.py  step 10: tables and figures from the frozen 2014 run
+src/step11_robustness.py          step 11: 2015 and grade groups (per the freeze record)
 decision_records/                 approved step-4 decisions, unchanged, with SHA-256 manifest
 outputs/step5/ ... outputs/step7/   summary tables and figures from each step (no loan-level data)
 notebooks/run_all_colab.ipynb     one-click rerun
