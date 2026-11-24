@@ -24,6 +24,7 @@ The full locked specification, with its change log, is in
 | 10 Financial evaluation | Signed off 24 Nov 2026 ([report](docs/step10_report.md), `decision_records/step10_signoff.json`) |
 | 11 Robustness | 2015 run once and signed off 24 Nov 2026 ([report](docs/step11_report.md), `decision_records/step11_signoff.json`): consistent with 2014 |
 | 12 Interpretability | Signed off 24 Nov 2026 ([report](docs/step12_report.md), `decision_records/step12_signoff.json`) |
+| 13 Final figures and tables | Signed off 24 Nov 2026 (`decision_records/step13_signoff.json`, [report](docs/step13_report.md), [all tables](docs/final_tables.md)) |
 | 13+ Final figures, manuscript, reproducibility audit | Not started |
 
 ## Run everything
@@ -46,6 +47,7 @@ python -m src.step10_financial_evaluation
 python -m src.step11_robustness --dry-run   # rehearsal with 2014 as stand-in
 python -m src.step11_robustness --unseal    # the one-time 2015 run
 python -m src.step12_interpretability
+python -m src.step13_final_outputs     # collects saved results; no new analysis
 ```
 
 ## Getting the data
@@ -88,6 +90,7 @@ src/step9_test_2014.py            step 9: the one-time 2014 test (per the freeze
 src/step10_financial_evaluation.py  step 10: tables and figures from the frozen 2014 run
 src/step11_robustness.py          step 11: 2015 and grade groups (per the freeze record)
 src/step12_interpretability.py    step 12: logit odds ratios and HGB permutation importance
+src/step13_final_outputs.py       step 13: final tables and figures for the manuscript (outputs/final/)
 decision_records/                 approved step-4 decisions, unchanged, with SHA-256 manifest
 outputs/step5/ ... outputs/step7/   summary tables and figures from each step (no loan-level data)
 notebooks/run_all_colab.ipynb     one-click rerun

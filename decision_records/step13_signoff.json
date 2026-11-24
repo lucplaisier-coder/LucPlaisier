@@ -1,0 +1,8 @@
+{
+  "decision_id": "STEP13-SIGNOFF-2026-11-24",
+  "date_local": "2026-11-24",
+  "timezone": "Europe/Amsterdam",
+  "approved_by": "user (Lucas)",
+  "authorization_text": "approved",
+  "authorization_context": "Reply to the step 13 report (docs/step13_report.md, docs/final_tables.md, PR #9)."
+}

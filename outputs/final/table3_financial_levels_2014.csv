@@ -1,0 +1,5 @@
+Approach,Loans funded,Charge-off rate,Principal loss rate,Net cash gain per $,Mean rate
+A. Fund-all,"162,570",13.73%,6.69%,7.74 c,12.47%
+B. Platform rule,"130,056",13.16%,6.38%,7.68 c,12.13%
+C. Logit,"130,056",12.62%,6.24%,7.95 c,12.33%
+D. HGB,"130,056",12.58%,6.11%,8.01 c,12.32%
