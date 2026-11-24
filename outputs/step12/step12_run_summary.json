@@ -1,0 +1,15 @@
+{
+  "final_models_reproduce_step9": true,
+  "base_auc_2014_hgb": 0.6717393974307209,
+  "permutation_repeats": 10,
+  "seed": 42,
+  "metric": "drop in AUC (G2)",
+  "odds_ratios_for": [
+    "fico_mid",
+    "dti",
+    "log_annual_inc",
+    "emp_length_ord",
+    "loan_amnt"
+  ],
+  "freeze_record_sha256": "e653b82d6e3c87b579d1f0176ed315c120f88e08e243a6e0f10dbaf7f35ca297"
+}
