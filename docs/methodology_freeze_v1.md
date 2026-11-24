@@ -1,8 +1,8 @@
-# Methodology freeze record v1 (roadmap step 8): DRAFT, NOT YET SIGNED
+# Methodology freeze record v1 (roadmap step 8): FROZEN
 
-**Status: DRAFT, waiting for Lucas's "freeze".** Nothing is frozen until Lucas signs. The 2014 test
-and 2015 robustness outcomes are still sealed. Nobody has opened them, and the code refuses to open
-them without a freeze date.
+**Status: FROZEN by Lucas on 24 Nov 2026 (2026-11-24T21:05:35Z UTC), exactly as drafted in commit `f556c98`,
+including the proposed values G1-G4.** Record: `decision_records/methodology_freeze_v1.json`. At the
+moment of freezing, the 2014 test and 2015 robustness outcomes were still sealed and unopened.
 
 Prepared: 24 Nov 2026. Basis: control document v1.0 Part 2 with its change log
 (`docs/project_control_document.md`) and the sign-offs in `decision_records/`.
@@ -102,7 +102,7 @@ missing-flag columns. 2014 and 2015 are then only *scored*. Nothing is learned f
    input and for the sub-grade + interest-rate block permuted together.
 7. **Six core outputs plus the annex**, as F.13. Selection-rate figure for q from 50% to 100%, display only.
 
-## G. Four details the plan leaves open: proposed values (please confirm with your "freeze")
+## G. Four details the plan leaves open: values confirmed by the freeze
 
 These are not decided anywhere yet. I propose the simplest standard choice for each, set now so that
 nothing is chosen after seeing 2014.
@@ -126,7 +126,7 @@ nothing is chosen after seeing 2014.
 
 | | |
 |---|---|
-| Frozen by | _(Lucas)_ |
-| Date | _(on signing)_ |
-| Code version | _(git commit of this record, filled in on signing)_ |
-| Authorization text | _(Lucas's reply)_ |
+| Frozen by | Lucas |
+| Date | 24 Nov 2026, 2026-11-24T21:05:35Z UTC |
+| Code version | draft commit `f556c989645670957091967e90ffa69e37652a62`; the freeze commit holds this signed record |
+| Authorization text | "freeze" |

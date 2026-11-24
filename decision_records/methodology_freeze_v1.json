@@ -1,0 +1,60 @@
+{
+  "decision_id": "METHODOLOGY-FREEZE-v1-2026-11-24",
+  "status": "FROZEN",
+  "frozen_utc": "2026-11-24T21:05:35Z",
+  "date_local": "2026-11-24",
+  "timezone": "Europe/Amsterdam",
+  "approved_by": "user (Lucas)",
+  "authorization_text": "freeze",
+  "authorization_context": "Reply to the draft record docs/methodology_freeze_v1.md (PR #4): 'Reply freeze to accept the record exactly as written.'",
+  "record": "docs/methodology_freeze_v1.md",
+  "record_sha256": "e653b82d6e3c87b579d1f0176ed315c120f88e08e243a6e0f10dbaf7f35ca297",
+  "draft_commit": "f556c989645670957091967e90ffa69e37652a62",
+  "includes_open_details": {
+    "G1": "selection-rate figure q = 0.50..1.00 step 0.05",
+    "G2": "permutation importance = drop in 2014 AUC, 10 repeats, seed 42",
+    "G3": "odds ratios only for the 5 borrower numbers; category coefficients shown uninterpreted",
+    "G4": "2015 judged with the same paired bootstrap (1,000, seed 42) and F.11 rules"
+  },
+  "final_models": {
+    "logit": {
+      "C": 0.01,
+      "penalty": "L2",
+      "solver": "lbfgs",
+      "max_iter": 1000
+    },
+    "hgb": {
+      "max_depth": 3,
+      "max_iter": 200,
+      "learning_rate": 0.05,
+      "min_samples_leaf": 200,
+      "random_state": 42,
+      "early_stopping": false,
+      "max_leaf_nodes": 31,
+      "l2_regularization": 0.0,
+      "max_bins": 255
+    }
+  },
+  "final_fit_years": [
+    2010,
+    2011,
+    2012,
+    2013
+  ],
+  "selection_rate": 0.8,
+  "strata": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "FG"
+  ],
+  "bootstrap": {
+    "draws": 1000,
+    "seed": 42,
+    "interval": "95% percentile"
+  },
+  "sealed_outcomes_opened_before_freeze": false,
+  "after_freeze": "Only bug fixes allowed; each logged in the control document change log and disclosed in the manuscript annex."
+}
