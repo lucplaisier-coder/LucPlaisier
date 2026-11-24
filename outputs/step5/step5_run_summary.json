@@ -1,0 +1,144 @@
+{
+  "step": "Roadmap step 5: clean dataset",
+  "run_utc": "2026-11-24T20:30:07+00:00",
+  "runtime_seconds": 54.4,
+  "python": "3.13.18",
+  "platform": "Linux-6.18.44-fc-v819-x86_64-with-glibc2.39",
+  "packages": {
+    "pandas": "2.3.3",
+    "numpy": "2.3.5",
+    "pyarrow": "22.0.0",
+    "scikit-learn": "1.9.1"
+  },
+  "raw_file": "accepted_2007_to_2018Q4.csv.gz",
+  "raw_sha256_before": "55c16f75120f897683f02e7aabcf080d0e4a20c4832feb1d592cfa941bd62a2d",
+  "raw_sha256_after": "55c16f75120f897683f02e7aabcf080d0e4a20c4832feb1d592cfa941bd62a2d",
+  "raw_unchanged": true,
+  "raw_rows_read": 2260701,
+  "candidate_pool_loans": 611963,
+  "research_sample_loans": 611816,
+  "research_sample_by_split": {
+    "robustness": 282787,
+    "test": 162570,
+    "validation": 100422,
+    "train": 66037
+  },
+  "rate_fix": {
+    "ledger_cases": 148,
+    "cases_found_and_corrected": 148,
+    "screen_before_stored_6": 146,
+    "screen_before_sparse_off_grid": 122,
+    "screen_before_union": 147,
+    "screen_before_flags_outside_ledger": 0,
+    "screen_after_union": 0,
+    "corrected_by_vintage": {
+      "2010": 3,
+      "2011": 3,
+      "2012": 8,
+      "2013": 18,
+      "2014": 35,
+      "2015": 81
+    }
+  },
+  "decisions_applied": [
+    "G2-RATE-2026-11-24-v1 (148 listing rates)",
+    "G2-VERIFY-EXCLUDE-2026-11-24-v1 (verification_status not an input; kept in audit file)",
+    "G2-PREP-2026-11-24-v1 (fixed per-loan rules P1-P9 only; nothing fitted)"
+  ],
+  "proposed_numeric_inputs": [
+    "fico_mid",
+    "dti",
+    "log_annual_inc",
+    "emp_length_ord",
+    "loan_amnt",
+    "sub_grade_ord",
+    "int_rate"
+  ],
+  "proposed_nominal_inputs": [
+    "home_ownership",
+    "purpose"
+  ],
+  "features_frozen": false,
+  "anything_fitted": false,
+  "sealed_outcomes": {
+    "years": [
+      2014,
+      2015
+    ],
+    "file": "data/clean/SEALED_step5_outcomes_2014_2015.parquet",
+    "rows": 445357,
+    "statistics_computed": "none (row count and file fingerprint only)"
+  },
+  "clean_files": {
+    "step5_inputs.parquet": {
+      "rows": 611816,
+      "columns": [
+        "id",
+        "vintage",
+        "split",
+        "grade",
+        "sub_grade",
+        "fico_mid",
+        "dti",
+        "log_annual_inc",
+        "emp_length_ord",
+        "loan_amnt",
+        "sub_grade_ord",
+        "int_rate",
+        "home_ownership",
+        "purpose"
+      ],
+      "sha256": "b826153b2f2f2ca3401c7b945151057452163743eec77e74d1ccbc18954b1ec5"
+    },
+    "step5_audit.parquet": {
+      "rows": 611816,
+      "columns": [
+        "id",
+        "vintage",
+        "int_rate_stored",
+        "int_rate_working",
+        "rate_overridden",
+        "verification_status_raw",
+        "emp_length_raw",
+        "home_ownership_raw",
+        "purpose_raw",
+        "annual_inc_raw"
+      ],
+      "sha256": "276254a26a04213d07e722742363f492a5aad642db7b74be5122f51d1bc909b7"
+    },
+    "step5_outcomes_2010_2013.parquet": {
+      "rows": 166459,
+      "columns": [
+        "id",
+        "vintage",
+        "split",
+        "target",
+        "funded_amnt",
+        "total_rec_prncp",
+        "total_rec_int",
+        "total_rec_late_fee",
+        "recoveries",
+        "collection_recovery_fee",
+        "total_pymnt"
+      ],
+      "sha256": "2313c2292f6db2fb136b64435c9b346e4547d803ffa5856286d46e31e4b37a9c"
+    },
+    "SEALED_step5_outcomes_2014_2015.parquet": {
+      "rows": 445357,
+      "columns": [
+        "id",
+        "vintage",
+        "split",
+        "target",
+        "funded_amnt",
+        "total_rec_prncp",
+        "total_rec_int",
+        "total_rec_late_fee",
+        "recoveries",
+        "collection_recovery_fee",
+        "total_pymnt"
+      ],
+      "sha256": "ad178d541829312719aebfd23ac640a60d6377ef0023630be17a017f6bc35ea8"
+    }
+  }
+}

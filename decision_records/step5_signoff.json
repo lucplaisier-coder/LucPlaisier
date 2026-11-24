@@ -1,0 +1,13 @@
+{
+  "decision_id": "STEP5-SIGNOFF-2026-11-24",
+  "date_local": "2026-11-24",
+  "timezone": "Europe/Amsterdam",
+  "approved_by": "user (Lucas)",
+  "authorization_text": "approved",
+  "authorization_context": "Reply to the step 5 report (docs/step5_report.md, PR #1): 'Reply approved or tell me what to change.'",
+  "scope": "Roadmap step 5 clean dataset as built by src/step5_build_clean_dataset.py; outputs in outputs/step5/.",
+  "research_sample_loans": 611816,
+  "features_frozen": false,
+  "models_started": false,
+  "sealed_2014_2015_outcomes_inspected": false
+}

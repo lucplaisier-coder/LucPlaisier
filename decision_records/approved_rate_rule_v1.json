@@ -1,0 +1,61 @@
+{
+  "created_utc": "2026-11-24T13:05:39.591618+00:00",
+  "status": "ADOPTED BY USER",
+  "recommended_treatment": "Use the loan-specific SEC-supported listing rate through a versioned working-data overlay for these 148 confirmed cases; preserve raw values and source references.",
+  "scope": "The existing F.3 2010\u20132015, 36-month, policy-1 Individual candidate pool, excluding the specified noncreditpolicy prefix. The existing terminal-status filter remains separate and unchanged.",
+  "identification_rule": {
+    "step_1": "Across every included vintage, flag the union of (a) stored rate exactly 6%, (b) a raw-versus-saved-archive rate discrepancy, and (c) a sparse off-grid rate cell.",
+    "sparse_cell_definition": "Exact CSV issue-month x subgrade; at least 20 loans; at most 2 at the rate; over 3 percentage points from the nearest tied modal non-6% rate. Ties are retained, not broken arbitrarily.",
+    "step_2": "A flag is only a search lead. Change a working rate only where that exact loan has a source-linked listed-rate candidate, the expected stored value matches, and no observed listing-rate conflict remains. Do not use grade/month or payment arithmetic to set a rate.",
+    "step_3": "Version the approved ledger if adopted. Newly discovered flags, changed raw fingerprints, conflicting versions or uncovered IDs must stop for evidence review, rather than receive an automatic rate.",
+    "limitations": "The archive and diagnostic screens are not exhaustive. Nearby-grid changes can escape. First-ever and investor-specific commitment versions are not universally certified."
+  },
+  "identification_counts": {
+    "stored_6": 146,
+    "saved_archive_discrepancies": 9,
+    "strict_screen": 122,
+    "strict_screen_stored_6": 121,
+    "strict_screen_non6_cells": [
+      {
+        "issue_d": "Aug-2015",
+        "sub_grade": "D2",
+        "rate_percent": 8.18,
+        "n": 1
+      }
+    ],
+    "deduplicated_union": 148
+  },
+  "ledger": "approved_listing_rate_ledger_v1.csv",
+  "when_adopted_consistent_uses": [
+    "F.5 int_rate predictor; one rate feature only",
+    "F.7 platform rule interest-rate tie-breaker",
+    "F.8/F.13 descriptive mean rate",
+    "F.12 platform-pricing block including sub_grade and the same int_rate"
+  ],
+  "audit_only_not_predictors": [
+    "Loan IDs",
+    "Original stored rates kept alongside the sourced value for lineage",
+    "Override membership/reason",
+    "Source URLs, evidence levels and version metadata"
+  ],
+  "no_change_to": [
+    "Raw input file",
+    "Research sample membership or target",
+    "Other nine proposed inputs",
+    "Subgrade and broad-grade selection strata",
+    "F.8 observed cash amounts or formulas",
+    "Train/validation/test vintages"
+  ],
+  "adopted": true,
+  "working_rate_dataset_written": false,
+  "models_started": false,
+  "feature_list_frozen": false,
+  "decision_id": "G2-RATE-2026-11-24-v1",
+  "decision_date_local": "2026-11-24",
+  "timezone": "Europe/Amsterdam",
+  "ledger_sha256": "0de3910393aa11e0dda166ca17b7b1b1e68723682641c2a5a4a1f90844b36dfe",
+  "full_working_dataset_materialized": false,
+  "component": "approved_rate_overlay.py",
+  "component_sha256": "ef4932d320c33cf843a4acf3e39ec449c53702d4117e0b858159e461f764a134",
+  "validation": "approved_overlay_validation.json"
+}

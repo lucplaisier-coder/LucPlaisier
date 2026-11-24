@@ -1,0 +1,296 @@
+{
+  "rules_id": "G2-PREP-2026-11-24-v1",
+  "revision": 9,
+  "date_local": "2026-11-24",
+  "status": "DOCUMENTED PREPARATION PLAN; NOT FITTED; FEATURES NOT FROZEN",
+  "authorization": "Document the preparation rules for the nine inputs: missing values, categories and transformations. Explain each step in easy language. Keep the raw file unchanged; no modeling or feature freeze.",
+  "relationship_to_control": "Clarify and operationalize F.5/F.6 for the nine currently proposed inputs. No new feature-selection decision, sample change, tuning choice or cash-formula change. Prior verification exclusion and 148-case rate rule remain adopted.",
+  "control_v1": "../evidence/project_control_document_v1_unchanged.md",
+  "control_v1_sha256": "a36665b31150ec2a9b4273c9ac56c666202ec5a448d02fc29c684e4e519c2a04",
+  "existing_user_decisions": [
+    "../rate_adoption_verification_2026-11-24/rate_adoption_decision.json",
+    "../verification_exclusion_2026-11-24/verification_exclusion_decision.json"
+  ],
+  "inputs": [
+    {
+      "rule_id": "P1",
+      "input": "Origination FICO midpoint",
+      "output": "fico_mid",
+      "raw_fields": [
+        "fico_range_low",
+        "fico_range_high"
+      ],
+      "kind": "numeric",
+      "transformation": "(fico_range_low + fico_range_high) / 2.0; no rounding; original FICO only.",
+      "domain": "Finite endpoints within 300–850, low <= high. Nonempty invalid values stop for review.",
+      "missing": "Keep a true gap as NaN in the shared view. Later logistic preparation uses its fit-window median plus a fit-time missing indicator; HGB retains NaN. If either endpoint is absent, the midpoint is absent; do not use the remaining endpoint or last_fico_range_*.",
+      "easy_why": "Use one number to represent the original score interval, while retaining the earlier timing/resolution caveat.",
+      "inherited_from": "F.5 and existing FICO timing review."
+    },
+    {
+      "rule_id": "P2",
+      "input": "Debt-to-income ratio",
+      "output": "dti",
+      "raw_fields": [
+        "dti"
+      ],
+      "kind": "numeric",
+      "transformation": "Retain percentage-point units: 18.5 means 18.5%. No division by 100, log, binning or cap.",
+      "domain": "Finite and >= 0. Zero is valid, not a missing marker. No new upper bound based on observed vintages.",
+      "missing": "Keep a true gap as NaN in the shared view. Later logistic preparation uses its fit-window median plus a fit-time missing indicator; HGB retains NaN.",
+      "easy_why": "Keep the reported debt burden and its units clear. A real zero remains a zero.",
+      "inherited_from": "F.5 dti input; unit clarification."
+    },
+    {
+      "rule_id": "P3",
+      "input": "Log annual income",
+      "output": "log_annual_inc",
+      "raw_fields": [
+        "annual_inc"
+      ],
+      "kind": "numeric",
+      "transformation": "Natural logarithm ln(annual_inc in annual USD), for strictly positive observed income. No log1p, added constant, clipping or winsorization. Apply log before later median filling/scaling.",
+      "domain": "Observed income must be finite and > 0. Unexpected zero/negative/nonempty invalid income stops for review; do not silently replace it.",
+      "missing": "Keep a true gap as NaN in the shared view. Later logistic preparation uses its fit-window median plus a fit-time missing indicator; HGB retains NaN. A truly absent income stays absent through the log step.",
+      "easy_why": "Compress the very large dollar range. Multiplicative income changes become equal-size changes on the log scale.",
+      "inherited_from": "F.5 log(annual_inc); natural log and order made explicit."
+    },
+    {
+      "rule_id": "P4",
+      "input": "Employment length",
+      "output": "emp_length_ord",
+      "raw_fields": [
+        "emp_length"
+      ],
+      "kind": "numeric_ordinal",
+      "transformation": "Use the exact fixed 0–10 map in employment_mapping. Less than one year maps to 0; 10+ maps to 10. No inference from employment title.",
+      "domain": "Trim outer whitespace. Accept the listed labels only. Empty/actual missing or case-insensitive n/a is absent; other unmapped nonempty text stops for review.",
+      "missing": "Keep a true gap as NaN in the shared view. Later logistic preparation uses its fit-window median plus a fit-time missing indicator; HGB retains NaN. Missing is never recoded as 0 or 10; median-filled values need not be rounded.",
+      "easy_why": "Separate reported work length from an unanswered question. The endpoints are broad groups, not exact zero or exactly ten years.",
+      "inherited_from": "F.5 ordinal 0–10, NaN retained; F.6 model-specific missing handling."
+    },
+    {
+      "rule_id": "P5",
+      "input": "Home ownership",
+      "output": "home_ownership",
+      "raw_fields": [
+        "home_ownership"
+      ],
+      "kind": "nominal",
+      "transformation": "Trim outer whitespace and canonicalize to uppercase. Retain distinct recorded labels, including NONE and OTHER; do not merge rare levels. Audit-wide observed labels are not a fitted vocabulary.",
+      "domain": "Empty/actual missing is absent. A new nonempty normalized label is an unseen category, not automatically a data error or a known category in the fitted encoder.",
+      "missing": "Logistic: replace absence with reserved __MISSING__, then apply the training-learned one-hot map; if that token was absent during fitting, the ignore rule gives zeros. HGB: keep actual absence as missing.",
+      "easy_why": "Home labels describe different states and do not have a numerical order. NONE is a recorded label, not an empty cell.",
+      "inherited_from": "F.5 home_ownership; F.6 categorical handling."
+    },
+    {
+      "rule_id": "P6",
+      "input": "Loan purpose",
+      "output": "purpose",
+      "raw_fields": [
+        "purpose"
+      ],
+      "kind": "nominal",
+      "transformation": "Trim outer whitespace and canonicalize to lowercase. Keep stated category labels separate. Do not use title/description, target encoding, outcome statistics or frequency pooling.",
+      "domain": "Empty/actual missing is absent. A later nonempty normalized label not in the fit vocabulary follows the unseen-category rule.",
+      "missing": "Same nominal handling as home ownership. Do not fill with the most common purpose.",
+      "easy_why": "Retain what the borrower said the money was for, without inventing a purpose or ranking purposes by later repayment.",
+      "inherited_from": "F.5 purpose; F.6 categorical handling."
+    },
+    {
+      "rule_id": "P7",
+      "input": "Loan amount",
+      "output": "loan_amnt",
+      "raw_fields": [
+        "loan_amnt"
+      ],
+      "kind": "numeric",
+      "transformation": "Retain listed loan_amnt in USD. No log, cap, rounding beyond source precision or substitution with funded_amnt/installment.",
+      "domain": "Observed amount must be finite and > 0; unexpected nonpositive/invalid nonempty values stop for review.",
+      "missing": "Keep a true gap as NaN in the shared view. Later logistic preparation uses its fit-window median plus a fit-time missing indicator; HGB retains NaN.",
+      "easy_why": "Use the requested/listed amount already selected for the study. Keep the measured listing-revision caveat.",
+      "inherited_from": "F.5 and loan-amount timing review."
+    },
+    {
+      "rule_id": "P8",
+      "input": "Platform subgrade",
+      "output": "sub_grade_ord",
+      "raw_fields": [
+        "sub_grade"
+      ],
+      "kind": "numeric_ordinal",
+      "transformation": "Use fixed A1=1 through G5=35: 5 * letter_index_from_A_zero + digit. Treat as ordered numeric in both models, preserving F.5.",
+      "domain": "Trim outer whitespace; uppercase. Require A–G plus digit 1–5. Before any future comparison run, require observed valid subgrade for the platform benchmark.",
+      "missing": "Unexpected absent subgrade stops the future comparison workflow for source review. Do not invent a platform rank, drop that loan or silently median-fill its benchmark rank.",
+      "easy_why": "Preserve the platform risk order. This also assumes one ordinal step has a common linear effect in the logistic model; it does not prove equal economic gaps.",
+      "inherited_from": "F.5 ordinal 1–35 and F.7 platform rule."
+    },
+    {
+      "rule_id": "P9",
+      "input": "Interest rate",
+      "output": "int_rate",
+      "raw_fields": [
+        "int_rate"
+      ],
+      "kind": "numeric",
+      "transformation": "Run the unchanged approved 148-case source-linked overlay before any model preparation. Retain percentage-point units, e.g. 12.5 means 12.5%. All other values stay stored values under the adopted rule.",
+      "domain": "Observed working rate must be finite and > 0. Enforce approved input fingerprint, ID uniqueness, expected stored values and complete approved-ledger coverage. Conflicts/uncovered flags stop for evidence review.",
+      "missing": "Unexpected absent rate stops the future comparison workflow for review. No peer, payment-math or median replacement for the platform ranking or rate summaries.",
+      "easy_why": "Carry the same approved rate into the predictor, platform tie-breaker, descriptive rates and pricing block, preserving source lineage.",
+      "inherited_from": "User-adopted G2-RATE-2026-11-24-v1, unchanged."
+    }
+  ],
+  "employment_mapping": {
+    "< 1 year": 0,
+    "1 year": 1,
+    "2 years": 2,
+    "3 years": 3,
+    "4 years": 4,
+    "5 years": 5,
+    "6 years": 6,
+    "7 years": 7,
+    "8 years": 8,
+    "9 years": 9,
+    "10+ years": 10
+  },
+  "subgrade_mapping": {
+    "A1": 1,
+    "A2": 2,
+    "A3": 3,
+    "A4": 4,
+    "A5": 5,
+    "B1": 6,
+    "B2": 7,
+    "B3": 8,
+    "B4": 9,
+    "B5": 10,
+    "C1": 11,
+    "C2": 12,
+    "C3": 13,
+    "C4": 14,
+    "C5": 15,
+    "D1": 16,
+    "D2": 17,
+    "D3": 18,
+    "D4": 19,
+    "D5": 20,
+    "E1": 21,
+    "E2": 22,
+    "E3": 23,
+    "E4": 24,
+    "E5": 25,
+    "F1": 26,
+    "F2": 27,
+    "F3": 28,
+    "F4": 29,
+    "F5": 30,
+    "G1": 31,
+    "G2": 32,
+    "G3": 33,
+    "G4": 34,
+    "G5": 35
+  },
+  "numeric_outputs": [
+    "fico_mid",
+    "dti",
+    "log_annual_inc",
+    "emp_length_ord",
+    "loan_amnt",
+    "sub_grade_ord",
+    "int_rate"
+  ],
+  "nominal_outputs": [
+    "home_ownership",
+    "purpose"
+  ],
+  "shared_order": [
+    "Read the fixed raw copy without overwriting it; verify fingerprint.",
+    "Apply the existing F.3 sample/target filters and F.4 year split unchanged. No preparation rule drops extra loans.",
+    "Run source/domain checks. Require complete usable subgrade/rate and grade selection strata for a comparison workflow. Preserve source exceptions for review, not silent dropping.",
+    "Apply the approved sparse rate overlay with lineage outside the predictor matrix.",
+    "Apply only the fixed per-row mappings/formulas and normalize actual missing values.",
+    "Use the fit-window-specific model preparation plan below. No fitted step is performed in this documentation task."
+  ],
+  "normalization": {
+    "actual_missing": "Empty/actual missing cells become NaN. Literal n/a is also missing for employment. Do not apply a blanket parser that converts home NONE or purpose other to missing.",
+    "bad_nonempty_values": "Malformed numeric text, nonfinite values, impossible domains or invalid subgrade/employment labels stop for review. Do not hide parse errors as NaN.",
+    "nominal_unknowns": "Nonempty unseen normalized nominal labels follow the documented encoder rule; counts/raw labels remain audit-only.",
+    "row_retention": "No extra deletion/deduplication/sample filter is introduced by this plan."
+  },
+  "logistic_plan": {
+    "numeric_branch": "After fixed transformations, median-fill each numeric column using nonmissing values in the permitted fit window. Append missing indicators only for numeric columns that had gaps in that fit window, matching add_indicator=True. Before this branch, the platform source checks require subgrade and rate complete.",
+    "all_empty_training_column": "Stop for review; do not drop the column or fill an arbitrary zero.",
+    "scaling": "For the seven filled numeric inputs only, z=(x-training_mean)/training_sd; population sd ddof=0. If training variance is zero, scale=1. Estimate after median filling. Binary missing flags and nominal one-hot columns remain unscaled.",
+    "nominal_branch": "Replace actual nominal absence with __MISSING__; fit OneHotEncoder with categories auto, drop None, handle_unknown ignore, min_frequency None and max_categories None only on the permitted fit window. No category merging or target/frequency encoding.",
+    "unseen_at_transform": "All zeros for that nominal block, with separate audit counts. __MISSING__ also follows ignore if it was never present at fit. Do not expand vocabulary using later years.",
+    "missing_indicator_scope": "A numeric field first missing in a later period receives its training median but no newly created indicator. Log such occurrences separately; do not change schema based on held-out data.",
+    "learned_values_created_now": false
+  },
+  "hgb_plan": {
+    "numeric_branch": "Use the same seven fixed numeric meanings, including logged income and numeric ordinal employment/subgrade. Keep NaNs. No numeric median filling, scaling or separate missing indicators.",
+    "nominal_branch": "Only home_ownership and purpose use native categorical support. Build each vocabulary from nonmissing normalized values in the permitted fit window. Map later unseen labels to missing in the model view; retain raw labels and unseen counts separately.",
+    "category_type_safety": "Pass explicitly categorical fields or an explicit categorical mask. Never pass arbitrary nominal integer codes as continuous/ordered numbers. Employment/subgrade remain numeric ordinal.",
+    "category_limit": "Check the implementation category limit before fitting; stop for review rather than merge levels or silently switch encoding.",
+    "learned_values_created_now": false
+  },
+  "fit_windows": {
+    "development": "Future fitting on terminal eligible 2010–2012 only; validation 2013 uses transform only.",
+    "final_refit": "Only after later authorization and fixed choices, refit all learned preparation and model parameters on eligible 2010–2013 as required by F.4. Apply that fitted preparation unchanged to 2014 test and 2015 robustness.",
+    "held_out_rule": "No medians, scales, learned category vocabularies or missing-indicator schema learned from 2014/2015. Descriptive audit inventories are not fitted vocabularies.",
+    "parameters_not_estimated_now": [
+      "medians",
+      "means",
+      "standard_deviations",
+      "learned_category_vocabularies",
+      "fit_time_missing_indicator_schema",
+      "model_parameters"
+    ]
+  },
+  "preserved_restrictions": {
+    "verification_status": "Excluded from main inputs, including no verification-derived proxy, dummy or missing flag. Raw/audit retained.",
+    "audit_only": [
+      "id and source joins",
+      "original stored rate alongside sourced rate",
+      "override membership/reason",
+      "source URLs and evidence labels",
+      "unknown-category counts and raw labels"
+    ],
+    "other_roles": {
+      "grade": "Selection stratum only; not a predictor.",
+      "loan_status": "Sample/target role only; not a predictor."
+    },
+    "no_new_feature_engineering": [
+      "No outcome/target encoding",
+      "No interactions, extra logs or bins",
+      "No winsorization, clipping or distribution-based loan deletion",
+      "No outcome-based category grouping or thresholds"
+    ]
+  },
+  "source_limits": "Existing timing/revision, source-coverage, investor-access and Gate 1 cash/fee/recovery limitations carry forward. The rule document cannot recover missing historical event times or prove all inputs were unchanged at commitment.",
+  "later_implementation_checks": [
+    "Verify raw hash, approved rate artifacts and nine conceptual meanings.",
+    "Ensure fixed mappings match source labels and actual missing values stay distinct from valid zero/NONE.",
+    "Verify numeric transform order and consistent units/rate uses.",
+    "Prove learned steps use only the permitted fit window, including the authorized 2010–2013 final refit.",
+    "Check unseen and newly missing held-out inputs without changing fit vocabularies/schema.",
+    "Stop on all-empty fit columns, invalid domains, missing benchmark rates/subgrades, source conflicts or incompatible categorical support.",
+    "Verify output row IDs/order and sample unchanged; audit fields and verification derivatives excluded from model inputs."
+  ],
+  "document_checks_performed_now": [
+    "Cross-checked proposed inputs and fixed mappings with F.5/F.6 and prior decisions.",
+    "Reused saved structural counts; no raw loan-row scan.",
+    "Checked official software documentation, without installation, estimator creation or fitting.",
+    "Verified raw hash before/after documentation and preserved prior evidence/archive."
+  ],
+  "no_execution_now": {
+    "raw_file_modified": false,
+    "new_raw_row_scan_performed": false,
+    "working_dataset_materialized": false,
+    "fixed_transforms_applied_to_loans": false,
+    "preprocessing_fitted": false,
+    "models_started": false,
+    "feature_list_frozen": false,
+    "features_py_created": false
+  },
+  "next_step": "Review the documented rules for consistency or independent checking. Gate 2 remains in progress. A later explicit instruction is required before feature freeze or fitting."
+}
