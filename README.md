@@ -22,7 +22,7 @@ The full locked specification, with its change log, is in
 | 8 Methodology freeze | FROZEN 24 Nov 2026 ([record](docs/methodology_freeze_v1.md), `decision_records/methodology_freeze_v1.json`) |
 | 9 Untouched 2014 test | Run once and signed off 24 Nov 2026 ([report](docs/step9_report.md), `decision_records/step9_signoff.json`): "AI adds economic value" |
 | 10 Financial evaluation | Signed off 24 Nov 2026 ([report](docs/step10_report.md), `decision_records/step10_signoff.json`) |
-| **11 Robustness** | **2015 run once 24 Nov 2026** ([report](docs/step11_report.md)): consistent with 2014; awaiting sign-off |
+| 11 Robustness | 2015 run once and signed off 24 Nov 2026 ([report](docs/step11_report.md), `decision_records/step11_signoff.json`): consistent with 2014 |
 | 12+ Interpretability, final outputs | Not started |
 
 ## Run everything
