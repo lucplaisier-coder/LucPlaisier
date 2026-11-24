@@ -20,7 +20,8 @@ The full locked specification, with its change log, is in
 | 6 Baseline logistic + platform benchmark | Signed off 24 Nov 2026 ([report](docs/step6_report.md), `decision_records/step6_signoff.json`) |
 | 7 Add HistGB | Signed off 24 Nov 2026 ([report](docs/step7_report.md), `decision_records/step7_signoff.json`) |
 | 8 Methodology freeze | FROZEN 24 Nov 2026 ([record](docs/methodology_freeze_v1.md), `decision_records/methodology_freeze_v1.json`) |
-| 9+ Test, evaluation, robustness | Not started (2014-2015 sealed) |
+| **9 Untouched 2014 test** | **Run once 24 Nov 2026** ([report](docs/step9_report.md)): "AI adds economic value" |
+| 10+ Financial evaluation, robustness (2015 still sealed), interpretability | Not started |
 
 ## Run everything
 
@@ -36,6 +37,8 @@ pip install -r requirements.txt
 python -m src.step5_build_clean_dataset
 python -m src.step6_baselines
 python -m src.step7_histgb
+python -m src.step9_test_2014 --dry-run   # rehearsal on 2013
+python -m src.step9_test_2014 --unseal    # the one-time 2014 test
 ```
 
 ## Getting the data
@@ -74,6 +77,7 @@ src/selection.py                  80%-within-grade selection; platform rule
 src/metrics.py                    AUC, Brier, ECE and the F.8 money formulas
 src/step6_baselines.py            step 6 entry point
 src/step7_histgb.py               step 7 entry point
+src/step9_test_2014.py            step 9: the one-time 2014 test (per the freeze record)
 decision_records/                 approved step-4 decisions, unchanged, with SHA-256 manifest
 outputs/step5/ ... outputs/step7/   summary tables and figures from each step (no loan-level data)
 notebooks/run_all_colab.ipynb     one-click rerun
