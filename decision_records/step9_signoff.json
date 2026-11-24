@@ -1,0 +1,10 @@
+{
+  "decision_id": "STEP9-SIGNOFF-2026-11-24",
+  "date_local": "2026-11-24",
+  "timezone": "Europe/Amsterdam",
+  "approved_by": "user (Lucas)",
+  "authorization_text": "yes",
+  "authorization_context": "Reply to the step 9 report (docs/step9_report.md, PR #5): 'Shall I merge this and continue with step 10?'",
+  "result_accepted": "2014 test run once (21:10 UTC, code 6491974, freeze SHA e653b82d). F.11 category: AI adds economic value.",
+  "year_2015_opened": false
+}

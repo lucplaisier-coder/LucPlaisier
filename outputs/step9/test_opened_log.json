@@ -1,0 +1,27 @@
+{
+  "label": "test",
+  "test_year": 2014,
+  "fit_years": [
+    2010,
+    2011,
+    2012,
+    2013
+  ],
+  "fit_loans": 166459,
+  "test_loans": 162570,
+  "logit_converged": true,
+  "fg_merged": true,
+  "bootstrap_draws": 1000,
+  "categories": {
+    "AI adds economic value": true,
+    "AI adds predictive but not economic value": false,
+    "Simpler model preferable": false,
+    "Platform pricing hard to beat": false
+  },
+  "runtime_seconds": 71.9,
+  "test_opened_utc": "2026-11-24T21:10:08+00:00",
+  "freeze_record_sha256": "e653b82d6e3c87b579d1f0176ed315c120f88e08e243a6e0f10dbaf7f35ca297",
+  "code_commit": "6491974fb627852c654db027b7ba9510d91ee59e",
+  "scikit_learn": "1.9.1",
+  "year_2015_opened": false
+}
