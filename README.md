@@ -16,7 +16,9 @@ The full locked specification, with its change log, is in
 |---|---|
 | 1-4 Data audit, timing checks, rate fix, preparation rules | Closed 24 Nov 2026 (decision records in `decision_records/`) |
 | 5 Clean dataset | Signed off 24 Nov 2026 ([report](docs/step5_report.md), `decision_records/step5_signoff.json`) |
-| 6+ Feature freeze, models, methodology freeze, test | Not started |
+| Gate 2 feature freeze | Nine inputs frozen 24 Nov 2026 (`src/features.py`, `decision_records/gate2_feature_freeze.json`) |
+| **6 Baseline logistic + platform benchmark** | **Built, awaiting sign-off** ([report](docs/step6_report.md)) |
+| 7+ HistGB, methodology freeze, test | Not started |
 
 ## Run everything
 
@@ -30,6 +32,7 @@ and choose *Runtime > Run all*. It clones the code, installs the pinned packages
 pip install -r requirements.txt
 # put accepted_2007_to_2018Q4.csv.gz in data/raw/   (or use --source, see below)
 python -m src.step5_build_clean_dataset
+python -m src.step6_baselines
 ```
 
 ## Getting the data
@@ -62,8 +65,13 @@ src/rates.py                      approved 148-loan listing-rate fix (G2-RATE-20
 src/inputs.py                     fixed per-loan input rules P1-P9 (G2-PREP-2026-11-24-v1)
 src/step5_build_clean_dataset.py  step 5 entry point
 src/load_clean.py                 how later steps open the clean files (fingerprint check + seal)
+src/features.py                   the FROZEN list of nine inputs (Gate 2)
+src/models.py                     logistic regression pipeline (preparation fitted on training rows only)
+src/selection.py                  80%-within-grade selection; platform rule
+src/metrics.py                    AUC, Brier, ECE and the F.8 money formulas
+src/step6_baselines.py            step 6 entry point
 decision_records/                 approved step-4 decisions, unchanged, with SHA-256 manifest
-outputs/step5/                    summary tables from the step 5 run (no loan-level data)
+outputs/step5/, outputs/step6/     summary tables and figures from each step (no loan-level data)
 notebooks/run_all_colab.ipynb     one-click rerun
 docs/                             control document and step reports
 data/                             raw and clean loan-level data (git-ignored, created by the code)
@@ -82,7 +90,7 @@ data/                             raw and clean loan-level data (git-ignored, cr
 
 ## Pinned software
 
-See `requirements.txt`: pandas 2.3.3, numpy 2.3.5, pyarrow 22.0.0, scikit-learn 1.9.1, kaggle 2.2.5.
+See `requirements.txt`: pandas 2.3.3, numpy 2.3.5, pyarrow 22.0.0, scikit-learn 1.9.1, kaggle 2.2.5, matplotlib 3.10.8.
 Each run records the versions it used in `outputs/step5/step5_run_summary.json`.
 
 ## GenAI disclosure

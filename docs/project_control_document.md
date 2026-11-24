@@ -269,6 +269,7 @@ For a selected set S:
 | 2026-11-24 | F.7 HGB: set `early_stopping=False` explicitly. Clarification, not a change. | The library turns it on by default above 10,000 rows, against F.7. | No |
 | 2026-11-24 | F.14 disclosure: report the 2014–15 DTI range shift and rising blank employment; no caps. Add an input-only out-of-range count per year. | Non-stationarity must be addressed (rubric, Data and Methodology). | No (inputs only) |
 | 2026-11-24 | F.15: this table is the official log. Separate decision records stay as supporting detail (step4_closure/decision_records/). | One place for a marker to check. | No |
+| 2026-11-24 | F.5 Gate 2: the nine inputs are frozen in `features.py` (FICO midpoint, dti, log income, employment length, home ownership, purpose, loan amount, sub-grade, int_rate). Record G2-FEATURE-FREEZE-2026-11-24. | Gate 2 freeze, approved by Lucas before any model was fitted. | No |
 
 ---
 

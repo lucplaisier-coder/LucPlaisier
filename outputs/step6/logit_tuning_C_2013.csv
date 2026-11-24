@@ -1,0 +1,4 @@
+C,validation_auc,validation_brier,validation_ece,converged,chosen
+0.01000,0.66521,0.10462,0.01733,True,True
+0.10000,0.66439,0.10475,0.01752,True,False
+1.00000,0.66419,0.10479,0.01755,True,False

@@ -1,0 +1,39 @@
+{
+  "step": "Roadmap step 6: baseline logistic + platform benchmark",
+  "run_utc": "2026-11-24T20:37:47+00:00",
+  "runtime_seconds": 5.3,
+  "scikit_learn": "1.9.1",
+  "features_frozen_on": "2026-11-24",
+  "inputs": [
+    "fico_mid",
+    "dti",
+    "log_annual_inc",
+    "emp_length_ord",
+    "loan_amnt",
+    "sub_grade_ord",
+    "int_rate",
+    "home_ownership",
+    "purpose"
+  ],
+  "train_years": [
+    2010,
+    2011,
+    2012
+  ],
+  "validation_year": 2013,
+  "train_loans": 66037,
+  "validation_loans": 100422,
+  "fg_merged": true,
+  "selection_rate": 0.8,
+  "seed": 42,
+  "logit_C_grid": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "logit_C_chosen": 0.01,
+  "all_fits_converged": true,
+  "leakage_alarm_triggered": false,
+  "sealed_2014_2015_outcomes_opened": false,
+  "hgb_started": false
+}

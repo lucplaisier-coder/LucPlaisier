@@ -1,0 +1,15 @@
+{
+  "decision_id": "G2-FEATURE-FREEZE-2026-11-24",
+  "date_local": "2026-11-24",
+  "timezone": "Europe/Amsterdam",
+  "approved_by": "user (Lucas)",
+  "authorization_text": "yes",
+  "authorization_context": "Question: 'Should I freeze these nine inputs and start step 6?' (FICO midpoint, debt-to-income, log income, employment length, home ownership, purpose, loan amount, sub-grade, interest rate; verification status excluded).",
+  "frozen_inputs_numeric": ["fico_mid", "dti", "log_annual_inc", "emp_length_ord", "loan_amnt", "sub_grade_ord", "int_rate"],
+  "frozen_inputs_nominal": ["home_ownership", "purpose"],
+  "not_inputs": {"grade": "selection stratum only", "verification_status": "excluded (G2-VERIFY-EXCLUDE-2026-11-24-v1)", "term": "constant", "installment": "determined by amount, rate and term"},
+  "preparation_rules": "G2-PREP-2026-11-24-v1 (unchanged)",
+  "code": "src/features.py",
+  "models_fitted_before_freeze": false,
+  "test_or_robustness_outcomes_seen": false
+}
