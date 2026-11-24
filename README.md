@@ -15,7 +15,7 @@ The full locked specification, with its change log, is in
 | Roadmap step | Status |
 |---|---|
 | 1-4 Data audit, timing checks, rate fix, preparation rules | Closed 24 Nov 2026 (decision records in `decision_records/`) |
-| **5 Clean dataset** | **Built, awaiting sign-off** ([report](docs/step5_report.md)) |
+| 5 Clean dataset | Signed off 24 Nov 2026 ([report](docs/step5_report.md), `decision_records/step5_signoff.json`) |
 | 6+ Feature freeze, models, methodology freeze, test | Not started |
 
 ## Run everything

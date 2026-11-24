@@ -1,5 +1,7 @@
 # Step 5 report: the clean dataset (for Lucas's sign-off)
 
+**Status: signed off by Lucas on 24 Nov 2026** (`decision_records/step5_signoff.json`).
+
 Date: 24 Nov 2026. Code: `src/step5_build_clean_dataset.py`. All numbers below come from
 `outputs/step5/` and can be regenerated in about one minute.
 
