@@ -19,7 +19,8 @@ The full locked specification, with its change log, is in
 | Gate 2 feature freeze | Nine inputs frozen 24 Nov 2026 (`src/features.py`, `decision_records/gate2_feature_freeze.json`) |
 | 6 Baseline logistic + platform benchmark | Signed off 24 Nov 2026 ([report](docs/step6_report.md), `decision_records/step6_signoff.json`) |
 | 7 Add HistGB | Signed off 24 Nov 2026 ([report](docs/step7_report.md), `decision_records/step7_signoff.json`) |
-| 8+ Methodology freeze, test | Not started |
+| **8 Methodology freeze** | **Draft ready, waiting for Lucas's signature** ([record](docs/methodology_freeze_v1.md)) |
+| 9+ Test, evaluation, robustness | Not started (2014-2015 sealed) |
 
 ## Run everything
 
