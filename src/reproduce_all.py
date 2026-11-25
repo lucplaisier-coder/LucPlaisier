@@ -1,7 +1,8 @@
 """
 reproduce_all.py: ROADMAP STEP 15, one command that reruns the whole project.
 
-    python -m src.reproduce_all
+    python -m src.reproduce_all              # rerun everything, then check
+    python -m src.reproduce_all --check-only # only the check (e.g. after the notebook)
 
 Plain-language summary
 ----------------------
@@ -45,19 +46,12 @@ VOLATILE = {
 }
 
 
-def main():
-    t0 = time.time()
-    for step in STEPS:
-        print(f"\n===== python -m {' '.join(step)} =====", flush=True)
-        t = time.time()
-        subprocess.run([sys.executable, "-m", *step], check=True, cwd=config.REPO_ROOT)
-        print(f"----- done in {time.time() - t:.0f} s", flush=True)
-
+def check_committed_outputs():
+    """Ask git whether any committed result file differs from what the rerun wrote."""
     changed = subprocess.run(["git", "status", "--porcelain", "--", "outputs", "docs/final_tables.md"],
                              capture_output=True, text=True, cwd=config.REPO_ROOT, check=True).stdout.split("\n")
     changed = [line[3:] for line in changed if line.strip()]
     changed = [c for c in changed if c not in VOLATILE and not c.startswith("outputs/reproduce")]
-    print(f"\nTotal run time: {(time.time() - t0) / 60:.1f} minutes")
     if changed:
         print("NOT REPRODUCED. These committed result files changed:\n  " + "\n  ".join(changed))
         sys.exit(1)
@@ -65,5 +59,17 @@ def main():
           "(only run times/timestamps in run-summary files may differ).")
 
 
+def main(check_only: bool = False):
+    t0 = time.time()
+    if not check_only:
+        for step in STEPS:
+            print(f"\n===== python -m {' '.join(step)} =====", flush=True)
+            t = time.time()
+            subprocess.run([sys.executable, "-m", *step], check=True, cwd=config.REPO_ROOT)
+            print(f"----- done in {time.time() - t:.0f} s", flush=True)
+        print(f"\nTotal run time: {(time.time() - t0) / 60:.1f} minutes")
+    check_committed_outputs()
+
+
 if __name__ == "__main__":
-    main()
+    main(check_only="--check-only" in sys.argv)
