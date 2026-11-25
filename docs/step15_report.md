@@ -61,3 +61,17 @@ title ("reproduction" instead of "test"), and they go to a separate folder.
 
 **Sign off step 15**, and decide on the repository access (public, or add the marker). Next on your
 roadmap: step 16 (defence preparation).
+
+## 4. Colab run by Lucas (25 Nov) and the fix
+
+Lucas ran the notebook in Colab. **Every table and number reproduced**: the 2014 and 2015 checks
+passed, and no CSV file differed. Only 9 figures (PNG) differed byte for byte. The cause was the font,
+not the data. The machine that drew the original figures has a system-wide matplotlib settings file
+that selects the "Inter" font, and Colab uses matplotlib's own DejaVu Sans. Same numbers, different
+pixels.
+
+The fix is `src/plotstyle.py`. It resets matplotlib to its built-in defaults, so every computer draws
+with DejaVu Sans, which ships inside matplotlib. The 9 figures were redrawn and committed. I checked a
+fresh copy with that settings file removed, as on Colab: `REPRODUCED`, byte-identical. The two
+reliability figures written by the one-time 2014 and 2015 runs (`outputs/step9/`, `outputs/step11/`)
+stay as logged. The manuscript uses the redrawn Figure 1. No number changed.
