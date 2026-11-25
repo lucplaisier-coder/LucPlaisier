@@ -3,6 +3,7 @@ step9_test_2014.py: ROADMAP STEP 9, the one-time 2014 test.
 
     python -m src.step9_test_2014 --dry-run     # rehearsal: fit 2010-2012, "test" on 2013
     python -m src.step9_test_2014 --unseal      # THE test: fit 2010-2013, test on 2014 (once)
+    python -m src.step9_test_2014 --reproduce   # step 15: rerun it and check = committed results
 
 Everything here follows the signed methodology freeze record
 (docs/methodology_freeze_v1.md, decision_records/methodology_freeze_v1.json).
@@ -228,6 +229,18 @@ def run(fit_df, test_df, test_year: int, out_dir, rec: dict, label: str) -> dict
 
 
 # ---------------------------------------------------------------------------
+def compare_with_committed(new_dir, committed_dir):
+    """Every result table written by a reproduction must equal the committed one."""
+    checked = 0
+    for f in sorted(new_dir.glob("*.csv")):
+        pd.testing.assert_frame_equal(pd.read_csv(f), pd.read_csv(committed_dir / f.name))
+        checked += 1
+    if checked == 0:
+        raise RuntimeError(f"No tables to compare in {new_dir}")
+    log(f"{checked} result tables identical to {committed_dir.relative_to(config.REPO_ROOT)}")
+
+
+# ---------------------------------------------------------------------------
 def main(mode: str):
     rec = load_freeze()
     inputs = load_clean.load_inputs()
@@ -241,6 +254,23 @@ def main(mode: str):
         summary, _ = run(fit_df, test_df, 2013, out_dir, rec, "dry run")
         (out_dir / "dryrun_summary.json").write_text(json.dumps(summary, indent=2, default=str))
         log(f"Dry run done: {summary['categories']}")
+        return
+
+    if mode == "reproduce":
+        # ---- REPRODUCTION (step 15) -----------------------------------------
+        # For a marker or auditor: rerun the SAME frozen test code on 2014 and
+        # check it gives the committed results. Nothing is chosen or changed;
+        # results go to outputs/reproduce/step9 and are compared with
+        # outputs/step9. The one-time log is not touched.
+        out_dir = config.REPO_ROOT / "outputs" / "reproduce" / "step9"
+        fit_df = dev[dev["vintage"].isin(rec["final_fit_years"])]
+        sealed = load_clean.load_sealed_outcomes(2014, methodology_frozen_on=rec["date_local"])
+        test_df = inputs[inputs["vintage"] == 2014].merge(
+            sealed[["id", "target"] + config.OUTCOME_COLUMNS], on="id", how="inner", validate="one_to_one")
+        summary, scores = run(fit_df, test_df, 2014, out_dir, rec, "reproduction")
+        scores.to_parquet(config.CLEAN_DIR / "step9_scores_selection_2014.parquet", index=False)
+        compare_with_committed(out_dir, config.REPO_ROOT / "outputs" / "step9")
+        log("2014 test reproduced: identical to the committed one-time run.")
         return
 
     # ---- THE ONE-TIME TEST ------------------------------------------------
@@ -277,5 +307,7 @@ if __name__ == "__main__":
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--dry-run", action="store_true")
     g.add_argument("--unseal", action="store_true")
+    g.add_argument("--reproduce", action="store_true",
+                   help="rerun the frozen 2014 test and check it equals the committed results")
     a = ap.parse_args()
-    main("dry-run" if a.dry_run else "unseal")
+    main("dry-run" if a.dry_run else "reproduce" if a.reproduce else "unseal")

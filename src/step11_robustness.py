@@ -3,6 +3,7 @@ step11_robustness.py: ROADMAP STEP 11, robustness (control document F.12, freeze
 
     python -m src.step11_robustness --dry-run   # rehearsal: 2014 (already open) as stand-in for 2015
     python -m src.step11_robustness --unseal    # THE robustness run: unseal 2015 once
+    python -m src.step11_robustness --reproduce # step 15: rerun it and check = committed results
 
 Plain-language summary
 ----------------------
@@ -31,7 +32,7 @@ import pandas as pd
 
 from . import config, load_clean, metrics
 from .step6_baselines import log
-from .step9_test_2014 import APPROACHES, SHORT, load_freeze, run
+from .step9_test_2014 import APPROACHES, SHORT, compare_with_committed, load_freeze, run
 
 GROUPS = {"A-B": ["A", "B"], "C": ["C"], "D-G": ["D", "E", "F", "G"]}
 
@@ -85,6 +86,19 @@ def main(mode: str):
         log("Dry run reproduces step 9 exactly. 2015 untouched.")
         return
 
+    if mode == "reproduce":
+        # ---- REPRODUCTION (step 15): same frozen code, compared with the committed run
+        out_dir = config.REPO_ROOT / "outputs" / "reproduce" / "step11"
+        t2015 = year_frame(2015)
+        summary, scores15 = run(fit_df, t2015, 2015, out_dir, rec, "reproduction")
+        scores15.to_parquet(config.CLEAN_DIR / "step11_scores_selection_2015.parquet", index=False)
+        scores14 = pd.read_parquet(config.CLEAN_DIR / "step9_scores_selection_2014.parquet")
+        pd.concat([grade_groups(t2014, scores14, 2014), grade_groups(t2015, scores15, 2015)]).to_csv(
+            out_dir / "grade_groups_2014_2015.csv", index=False, float_format="%.6f")
+        compare_with_committed(out_dir, config.REPO_ROOT / "outputs" / "step11")
+        log("2015 robustness reproduced: identical to the committed one-time run.")
+        return
+
     # ---- THE ONE-TIME 2015 RUN ---------------------------------------------
     out_dir = config.REPO_ROOT / "outputs" / "step11"
     opened_log = out_dir / "robustness_2015_opened_log.json"
@@ -118,5 +132,7 @@ if __name__ == "__main__":
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--dry-run", action="store_true")
     g.add_argument("--unseal", action="store_true")
+    g.add_argument("--reproduce", action="store_true",
+                   help="rerun the frozen 2015 run (needs step 9 --reproduce first) and check it")
     a = ap.parse_args()
-    main("dry-run" if a.dry_run else "unseal")
+    main("dry-run" if a.dry_run else "reproduce" if a.reproduce else "unseal")
