@@ -271,6 +271,7 @@ For a selected set S:
 | 2026-11-24 | F.15: this table is the official log. Separate decision records stay as supporting detail (step4_closure/decision_records/). | One place for a marker to check. | No |
 | 2026-11-24 | F.5 Gate 2: the nine inputs are frozen in `features.py` (FICO midpoint, dti, log income, employment length, home ownership, purpose, loan amount, sub-grade, int_rate). Record G2-FEATURE-FREEZE-2026-11-24. | Gate 2 freeze, approved by Lucas before any model was fitted. | No |
 | 2026-11-24 | F.15 Gate 5 / roadmap step 8: methodology FROZEN as `docs/methodology_freeze_v1.md` (SHA-256 e653b82d…a297), incl. G1-G4. Record METHODOLOGY-FREEZE-v1-2026-11-24. From now on only bug fixes. | Lucas's "freeze", before any 2014/2015 outcome was opened. | No |
+| 2026-11-25 | F.14 reproducibility (roadmap step 15): `--reproduce` mode added to the step 9 and step 11 scripts and one entry point `src/reproduce_all.py`. The mode reruns the frozen code and stops unless every result table equals the committed one-time run; the one-time logs are untouched. No method, setting or result changed. | A marker must be able to rerun the 2014 and 2015 results, but the one-time `--unseal` correctly refuses a second opening. | Yes, already opened once each (steps 9 and 11); nothing re-chosen |
 
 ---
 
