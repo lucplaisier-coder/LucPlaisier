@@ -53,7 +53,11 @@ def check_committed_outputs():
     changed = [line[3:] for line in changed if line.strip()]
     changed = [c for c in changed if c not in VOLATILE and not c.startswith("outputs/reproduce")]
     if changed:
+        tables = [c for c in changed if not c.endswith(".png")]
         print("NOT REPRODUCED. These committed result files changed:\n  " + "\n  ".join(changed))
+        if not tables:
+            print("Only figures (.png) differ; every table and number is identical. This points to a "
+                  "drawing difference (fonts or matplotlib build), not a different result.")
         sys.exit(1)
     print("REPRODUCED: every committed table and figure is identical "
           "(only run times/timestamps in run-summary files may differ).")

@@ -25,6 +25,7 @@ import shutil
 
 import matplotlib
 matplotlib.use("Agg")
+from . import plotstyle  # noqa: F401  (same fonts on every computer)
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
