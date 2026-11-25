@@ -20,3 +20,8 @@ analysis and nothing re-chosen.
 1. **GenAI disclosure:** name the second AI adviser from the design phase (marked `[TO COMPLETE BY LUCAS]`).
 2. **References:** the three papers are well known (two are on the course paper list), but please check the details yourself.
 3. Read it once fully: you must be able to defend every sentence.
+
+## Sign-off
+
+**Signed off by Lucas on 25 Nov 2026.** Second AI adviser: ChatGPT (added to the disclosure). References
+checked by Lucas. Submission copies: `submission/manuscript.pdf` and `submission/manuscript.docx`.

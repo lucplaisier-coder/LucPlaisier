@@ -1,0 +1,8 @@
+{
+  "decision_id": "STEP14-SIGNOFF-2026-11-25",
+  "date_local": "2026-11-25",
+  "timezone": "Europe/Amsterdam",
+  "approved_by": "user (Lucas)",
+  "authorization_text": "1. ChatGPT 2. They look good 3. I think the draft looks good, but dont we need to hand it in as a pdf or word?",
+  "authorization_context": "Reply to the step 14 manuscript draft (docs/manuscript.md, PR #10): second AI adviser = ChatGPT; references checked; draft approved."
+}

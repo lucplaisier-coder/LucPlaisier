@@ -1,6 +1,6 @@
 # Out-of-Time Credit Risk Prediction and Loan Selection: Does Gradient Boosting Add Value Beyond Platform Pricing and Logistic Regression?
 
-Lucas Plaisier · AI for Finance, Final Capstone Project (Type A, Industry Focus) · Draft v1, 24 November 2026
+Lucas Plaisier · AI for Finance, Final Capstone Project (Type A, Industry Focus) · 25 November 2026
 
 Code and every number in this paper: GitHub repository `lucplaisier-coder/LucPlaisier` (`python -m src.step13_final_outputs` rebuilds all tables and figures; see Section 3.7).
 
@@ -164,7 +164,7 @@ Both models reach an AUC of about 0.67, normal for application-time credit data 
 
 Calibration worsens when the default rate rises (Figure 1). Both models were trained on years with a 12.4% charge-off rate, so they predict too little risk in 2015, when 14.9% of loans charged off. This is a level shift, not a ranking failure, and selection uses only the ranking.
 
-![Figure 1](../outputs/final/figure1_reliability_2014_2015.png)
+![](../outputs/final/figure1_reliability_2014_2015.png)
 
 *Figure 1. Reliability of predicted default probabilities, 2014 and 2015.*
 
@@ -196,7 +196,7 @@ What the numbers mean in money:
 
 The result does not depend on the 80% cut-off (Figure 2). HGB is at or above the logit at every share from 50% to 100%, and the gap is largest when the investor is more selective. The platform rule falls further behind fund-all the more selective it is. The figure is for display only: the share was fixed at 80% before the test and was not chosen from this curve. With a 0% service fee every conclusion is unchanged (Annex A3).
 
-![Figure 2](../outputs/final/figure2_selection_rate_curve_2014.png)
+![](../outputs/final/figure2_selection_rate_curve_2014.png)
 
 *Figure 2. Net cash gain per dollar against the share of each grade funded, 2014.*
 
@@ -229,7 +229,7 @@ FICO's extra effect is modest because the sub-grade already prices most of it.
 * Shuffled alone, the sub-grade looks unimportant (0.005), because the rate carries the same information. This is why the pricing block was pre-registered.
 * Among borrower inputs, income matters most (0.024), followed by loan amount, debt-to-income and FICO.
 
-![Figure 3](../outputs/final/figure3_permutation_importance_2014.png)
+![](../outputs/final/figure3_permutation_importance_2014.png)
 
 *Figure 3. HGB permutation importance, 2014 test (drop in AUC when shuffled).*
 
@@ -263,7 +263,7 @@ The two methods agree: both models lean mostly on the platform's price and *refi
 
 ## Use of generative AI
 
-Claude (Anthropic) was used in three roles: (1) as an adviser reviewing the research design against the course guidelines and rubric; (2) as a coding assistant that wrote and ran the Python code under my direction; and (3) to draft this manuscript from the signed-off results. **[TO COMPLETE BY LUCAS: name the second AI adviser used in the design phase and its role.]** Every methodological decision was made and approved by me before the test data was opened. Each approval is recorded in `decision_records/` and in the change log of the project control document. I checked the results and remain responsible for everything submitted.
+Two generative AI tools were used. ChatGPT (OpenAI) was used as an adviser in the design phase, to discuss and review the research design. Claude (Anthropic) was used in three roles: (1) as an adviser reviewing the research design against the course guidelines and rubric; (2) as a coding assistant that wrote and ran the Python code under my direction; and (3) to draft this manuscript from the signed-off results. Every methodological decision was made and approved by me before the test data was opened. Each approval is recorded in `decision_records/` and in the change log of the project control document. I checked the results and remain responsible for everything submitted.
 
 ---
 
