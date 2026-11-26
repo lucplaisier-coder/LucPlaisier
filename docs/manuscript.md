@@ -2,7 +2,7 @@
 
 Lucas Plaisier · AI for Finance, Final Capstone Project (Type A, Industry Focus) · 25 November 2026
 
-Code and every number in this paper: GitHub repository `lucplaisier-coder/LucPlaisier` (`python -m src.step13_final_outputs` rebuilds all tables and figures; see Section 3.7).
+Code and every number in this paper: GitHub repository `lucplaisier-coder/LucPlaisier` (`python -m src.reproduce_all` reruns everything from the raw file and checks every table and figure; see Section 3.7).
 
 ---
 
@@ -143,7 +143,7 @@ The four categories, applied to 2014 only, were fixed before the test:
 
 The whole method was frozen in a signed record with a SHA-256 hash on 24 November 2026, while the 2014 and 2015 outcomes were still sealed. The record covers the sample, inputs, settings, selection rule, metrics, bootstrap and categories. The code made opening the sealed file possible only with that freeze date. The test code was committed before 2014 was opened. 2014 was then opened exactly once, and 2015 once afterwards. Each opening wrote a log that blocks any rerun. No setting was changed after the freeze.
 
-The repository holds pinned package versions, the data fingerprint and every decision record, and one command per step regenerates every table and figure in this paper.
+The repository holds pinned package versions, the data fingerprint and every decision record. One command reruns the whole project from the raw file in about seven minutes and checks that every table and figure equals the committed version.
 
 ## 4. Empirical results
 

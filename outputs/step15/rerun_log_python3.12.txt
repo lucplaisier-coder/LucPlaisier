@@ -1,0 +1,69 @@
+
+===== python -m src.step5_build_clean_dataset =====
+[14:42:42] Checking fingerprint of accepted_2007_to_2018Q4.csv.gz ...
+[14:42:42] Fingerprint OK
+[14:42:42] Reading raw columns (takes a few minutes) ...
+[14:43:27] Read 2,260,701 rows x 25 columns
+[14:43:32] Candidate pool: 611,963 loans
+[14:43:39] Rate fix: 148 loans corrected; 0 still flagged after fix
+[14:43:41] Research sample: 611,816 loans (matches the Gate 1 audit counts)
+[14:43:44] Nine proposed inputs built
+[14:43:47] Loan-level files written to data/clean/
+[14:43:51] Done in 69.6 s. Summaries in outputs/step5/
+----- done in 72 s
+
+===== python -m src.step6_baselines =====
+[14:43:56] Train 2010-2012: 66,037 loans | Validation 2013: 100,422 loans
+[14:43:56] Grades F and G merged: True (2014 counts F=1980, G=179)
+[14:43:58] Leakage alarm (single inputs): highest AUC 0.649, no alarm
+[14:44:00] Logit: chosen C = 0.01 (validation AUC 0.6652)
+[14:44:00] Done in 5.6 s. Results in outputs/step6/
+----- done in 9 s
+
+===== python -m src.step7_histgb =====
+[14:44:04] Train 2010-2012: 66,037 | Validation 2013: 100,422
+[14:44:05] HGB depth=3, trees=200: AUC 0.6649
+[14:44:06] HGB depth=3, trees=500: AUC 0.6636
+[14:44:08] HGB depth=5, trees=200: AUC 0.6632
+[14:44:10] HGB depth=5, trees=500: AUC 0.6586
+[14:44:11] Chosen HGB: depth=3, trees=200. Gate 4 automatic checks passed: True. Done in 8.9 s.
+----- done in 11 s
+
+===== python -m src.step9_test_2014 --dry-run =====
+[14:44:16] [dry run] models fitted on 66,037 loans; scoring 100,422 loans of 2013
+[14:44:55] Dry run done: {'AI adds economic value': False, 'AI adds predictive but not economic value': False, 'Simpler model preferable': True, 'Platform pricing hard to beat': False}
+----- done in 44 s
+
+===== python -m src.step9_test_2014 --reproduce =====
+[14:45:01] [reproduction] models fitted on 166,459 loans; scoring 162,570 loans of 2014
+[14:46:05] 6 result tables identical to outputs/step9
+[14:46:05] 2014 test reproduced: identical to the committed one-time run.
+----- done in 70 s
+
+===== python -m src.step10_financial_evaluation =====
+[14:46:09] Saved 2014 selections reproduce exactly
+[14:46:12] Step 10 outputs written to /tmp/claude-0/-home-user/98eb9119-36ec-55ac-9943-348841fe230d/scratchpad/audit312/repo/outputs/step10
+----- done in 7 s
+
+===== python -m src.step11_robustness --dry-run =====
+[14:46:19] [robustness dry run] models fitted on 166,459 loans; scoring 162,570 loans of 2014
+[14:47:19] Dry run reproduces step 9 exactly. 2015 untouched.
+----- done in 67 s
+
+===== python -m src.step11_robustness --reproduce =====
+[14:47:27] [reproduction] models fitted on 166,459 loans; scoring 282,787 loans of 2015
+[14:49:38] 7 result tables identical to outputs/step11
+[14:49:38] 2015 robustness reproduced: identical to the committed one-time run.
+----- done in 139 s
+
+===== python -m src.step12_interpretability =====
+[14:49:45] Final models reproduce the frozen step 9 predictions exactly
+[14:50:38] Step 12 outputs written
+----- done in 61 s
+
+===== python -m src.step13_final_outputs =====
+Final outputs in /tmp/claude-0/-home-user/98eb9119-36ec-55ac-9943-348841fe230d/scratchpad/audit312/repo/outputs/final and /tmp/claude-0/-home-user/98eb9119-36ec-55ac-9943-348841fe230d/scratchpad/audit312/repo/docs/final_tables.md
+----- done in 1 s
+
+Total run time: 8.0 minutes
+REPRODUCED: every committed table and figure is identical (only run times/timestamps in run-summary files may differ).

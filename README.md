@@ -26,7 +26,7 @@ The full locked specification, with its change log, is in
 | 12 Interpretability | Signed off 24 Nov 2026 ([report](docs/step12_report.md), `decision_records/step12_signoff.json`) |
 | 13 Final figures and tables | Signed off 24 Nov 2026 (`decision_records/step13_signoff.json`, [report](docs/step13_report.md), [all tables](docs/final_tables.md)) |
 | 14 Manuscript | Signed off 25 Nov 2026 (`decision_records/step14_signoff.json`, [PDF](submission/manuscript.pdf), [Word](submission/manuscript.docx), [manuscript](docs/manuscript.md), [report](docs/step14_report.md)) |
-| 13+ Final figures, manuscript, reproducibility audit | Not started |
+| 15 Reproducibility audit | Signed off 26 Nov 2026 (`decision_records/step15_signoff.json`, [report](docs/step15_report.md)): fresh clone, clean install, full rerun from the raw file, every table and figure identical |
 
 ## Run everything
 
@@ -34,22 +34,35 @@ The full locked specification, with its change log, is in
 and choose *Runtime > Run all*. It clones the code, installs the pinned packages, gets the raw file
 (Google Drive or Kaggle API) and runs every step.
 
-**Your own computer** (Python 3.11 or newer):
+**Your own computer** (tested with Python 3.12 and 3.13):
 
 ```bash
 pip install -r requirements.txt
 # put accepted_2007_to_2018Q4.csv.gz in data/raw/   (or use --source, see below)
+python -m src.reproduce_all     # reruns every step (about 7 minutes) and checks the results
+```
+
+`reproduce_all` runs the steps below in order and ends by asking git whether any committed table or
+figure changed. A faithful rerun prints `REPRODUCED`. You can also run the steps one by one:
+
+```bash
 python -m src.step5_build_clean_dataset
 python -m src.step6_baselines
 python -m src.step7_histgb
-python -m src.step9_test_2014 --dry-run   # rehearsal on 2013
-python -m src.step9_test_2014 --unseal    # the one-time 2014 test
+python -m src.step9_test_2014 --dry-run      # rehearsal on 2013
+python -m src.step9_test_2014 --reproduce    # reruns the frozen 2014 test, checks = committed results
 python -m src.step10_financial_evaluation
-python -m src.step11_robustness --dry-run   # rehearsal with 2014 as stand-in
-python -m src.step11_robustness --unseal    # the one-time 2015 run
+python -m src.step11_robustness --dry-run    # rehearsal with 2014 as stand-in
+python -m src.step11_robustness --reproduce  # reruns the frozen 2015 run, checks = committed results
 python -m src.step12_interpretability
-python -m src.step13_final_outputs     # collects saved results; no new analysis
+python -m src.step13_final_outputs          # collects saved results; no new analysis
+bash submission/build.sh                     # Word + PDF of the manuscript (needs pandoc, LibreOffice)
 ```
+
+**The one-time tests.** `--unseal` was the single, logged opening of 2014 and of 2015
+(`outputs/step9/test_opened_log.json`, `outputs/step11/robustness_2015_opened_log.json`). It refuses
+to run again. `--reproduce` runs the same frozen code, writes to `outputs/reproduce/` (git-ignored) and
+stops with an error if any result table differs from the committed one.
 
 ## Getting the data
 
@@ -68,6 +81,7 @@ The code checks the file's SHA-256 fingerprint before and after every run and st
 ```
 55c16f75120f897683f02e7aabcf080d0e4a20c4832feb1d592cfa941bd62a2d  accepted_2007_to_2018Q4.csv.gz
 ```
+
 
 The raw file is opened read-only and never changed.
 
@@ -92,8 +106,10 @@ src/step10_financial_evaluation.py  step 10: tables and figures from the frozen 
 src/step11_robustness.py          step 11: 2015 and grade groups (per the freeze record)
 src/step12_interpretability.py    step 12: logit odds ratios and HGB permutation importance
 src/step13_final_outputs.py       step 13: final tables and figures for the manuscript (outputs/final/)
+src/reproduce_all.py              step 15: rerun everything and check every committed result
+submission/                       manuscript as PDF and Word, and the script that builds them
 decision_records/                 approved step-4 decisions, unchanged, with SHA-256 manifest
-outputs/step5/ ... outputs/step7/   summary tables and figures from each step (no loan-level data)
+outputs/step5/ ... outputs/final/  summary tables and figures from each step (no loan-level data)
 notebooks/run_all_colab.ipynb     one-click rerun
 docs/                             control document and step reports
 data/                             raw and clean loan-level data (git-ignored, created by the code)
@@ -117,7 +133,8 @@ Each run records the versions it used in `outputs/step5/step5_run_summary.json`.
 
 ## GenAI disclosure
 
-Claude (Anthropic) was used as an adviser for specification review and as a coding assistant that
-wrote and ran this code under the author's direction. Every methodological decision was made and
-approved by the author; the decision records are in `decision_records/` and the control document's
-change log. (The full disclosure will name every AI tool used, as required by the guidelines.)
+Two generative AI tools were used. ChatGPT (OpenAI) was used as an adviser in the design phase, to
+discuss and review the research design. Claude (Anthropic) was used as an adviser for specification
+review, as a coding assistant that wrote and ran this code under the author's direction, and to draft
+the manuscript from the signed-off results. Every methodological decision was made and approved by the
+author; the decision records are in `decision_records/` and the control document's change log.

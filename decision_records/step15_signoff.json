@@ -1,0 +1,8 @@
+{
+  "decision_id": "STEP15-SIGNOFF-2026-11-26",
+  "date_local": "2026-11-26",
+  "timezone": "Europe/Amsterdam",
+  "approved_by": "user (Lucas)",
+  "authorization_text": "approved",
+  "authorization_context": "Reply to the step 15 reproducibility audit (docs/step15_report.md, PR #11), after Lucas's own Colab rerun printed REPRODUCED."
+}
