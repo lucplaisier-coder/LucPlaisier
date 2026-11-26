@@ -10,6 +10,17 @@ and a regularised logistic regression, on a later, untouched vintage? Funding ev
 The full locked specification, with its change log, is in
 [`docs/project_control_document.md`](docs/project_control_document.md).
 
+## For the marker
+
+| What | Where |
+|---|---|
+| Manuscript (PDF / Word) | [`submission/manuscript.pdf`](submission/manuscript.pdf), [`submission/manuscript.docx`](submission/manuscript.docx); source [`docs/manuscript.md`](docs/manuscript.md) |
+| Every table and figure in the manuscript | [`docs/final_tables.md`](docs/final_tables.md) and `outputs/final/` |
+| Rerun everything and check it | `python -m src.reproduce_all` (about 8 minutes; prints `REPRODUCED`), or the Colab notebook below |
+| Locked method and change log | [`docs/methodology_freeze_v1.md`](docs/methodology_freeze_v1.md), [`docs/project_control_document.md`](docs/project_control_document.md) |
+| One-time test logs (2014, 2015) | `outputs/step9/test_opened_log.json`, `outputs/step11/robustness_2015_opened_log.json` |
+| Author's decisions and sign-offs | `decision_records/` |
+
 ## Status
 
 | Roadmap step | Status |
@@ -27,6 +38,8 @@ The full locked specification, with its change log, is in
 | 13 Final figures and tables | Signed off 24 Nov 2026 (`decision_records/step13_signoff.json`, [report](docs/step13_report.md), [all tables](docs/final_tables.md)) |
 | 14 Manuscript | Signed off 25 Nov 2026 (`decision_records/step14_signoff.json`, [PDF](submission/manuscript.pdf), [Word](submission/manuscript.docx), [manuscript](docs/manuscript.md), [report](docs/step14_report.md)) |
 | 15 Reproducibility audit | Signed off 26 Nov 2026 (`decision_records/step15_signoff.json`, [report](docs/step15_report.md)): fresh clone, clean install, full rerun from the raw file, every table and figure identical |
+| 16 Defence preparation | Signed off 26 Nov 2026 (slides and Q&A kept outside this repository) |
+| 17 Submission | Final version of this repository; see "For the marker" above |
 
 ## Run everything
 
