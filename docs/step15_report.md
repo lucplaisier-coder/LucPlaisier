@@ -75,3 +75,6 @@ with DejaVu Sans, which ships inside matplotlib. The 9 figures were redrawn and 
 fresh copy with that settings file removed, as on Colab: `REPRODUCED`, byte-identical. The two
 reliability figures written by the one-time 2014 and 2015 runs (`outputs/step9/`, `outputs/step11/`)
 stay as logged. The manuscript uses the redrawn Figure 1. No number changed.
+
+**Colab rerun by Lucas, 26 Nov 2026:** after the fix, the notebook's final check printed
+`REPRODUCED: every committed table and figure is identical`.
