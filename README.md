@@ -14,8 +14,8 @@ The full locked specification, with its change log, is in
 
 | What | Where |
 |---|---|
-| Manuscript (PDF / Word) | [`submission/manuscript.pdf`](submission/manuscript.pdf), [`submission/manuscript.docx`](submission/manuscript.docx); source [`docs/manuscript.md`](docs/manuscript.md) |
-| Every table and figure in the manuscript | [`docs/final_tables.md`](docs/final_tables.md) and `outputs/final/` |
+| Manuscript | Handed in as a separate document; this repository holds only the code and the results it produces |
+| Every final table and figure | [`docs/final_tables.md`](docs/final_tables.md) and `outputs/final/` |
 | Rerun everything and check it | `python -m src.reproduce_all` (about 8 minutes; prints `REPRODUCED`), or the Colab notebook below |
 | Locked method and change log | [`docs/methodology_freeze_v1.md`](docs/methodology_freeze_v1.md), [`docs/project_control_document.md`](docs/project_control_document.md) |
 | One-time test logs (2014, 2015) | `outputs/step9/test_opened_log.json`, `outputs/step11/robustness_2015_opened_log.json` |
@@ -36,7 +36,7 @@ The full locked specification, with its change log, is in
 | 11 Robustness | 2015 run once and signed off 24 Nov 2026 ([report](docs/step11_report.md), `decision_records/step11_signoff.json`): consistent with 2014 |
 | 12 Interpretability | Signed off 24 Nov 2026 ([report](docs/step12_report.md), `decision_records/step12_signoff.json`) |
 | 13 Final figures and tables | Signed off 24 Nov 2026 (`decision_records/step13_signoff.json`, [report](docs/step13_report.md), [all tables](docs/final_tables.md)) |
-| 14 Manuscript | Signed off 25 Nov 2026 (`decision_records/step14_signoff.json`, [PDF](submission/manuscript.pdf), [Word](submission/manuscript.docx), [manuscript](docs/manuscript.md), [report](docs/step14_report.md)) |
+| 14 Manuscript | Signed off 25 Nov 2026 (`decision_records/step14_signoff.json`); handed in as a separate document, kept outside this repository |
 | 15 Reproducibility audit | Signed off 26 Nov 2026 (`decision_records/step15_signoff.json`, [report](docs/step15_report.md)): fresh clone, clean install, full rerun from the raw file, every table and figure identical |
 | 16 Defence preparation | Signed off 26 Nov 2026 (slides and Q&A kept outside this repository) |
 | 17 Submission | Final version of this repository; see "For the marker" above |
@@ -69,7 +69,6 @@ python -m src.step11_robustness --dry-run    # rehearsal with 2014 as stand-in
 python -m src.step11_robustness --reproduce  # reruns the frozen 2015 run, checks = committed results
 python -m src.step12_interpretability
 python -m src.step13_final_outputs          # collects saved results; no new analysis
-bash submission/build.sh                     # Word + PDF of the manuscript (needs pandoc, LibreOffice)
 ```
 
 **The one-time tests.** `--unseal` was the single, logged opening of 2014 and of 2015
@@ -118,9 +117,8 @@ src/step9_test_2014.py            step 9: the one-time 2014 test (per the freeze
 src/step10_financial_evaluation.py  step 10: tables and figures from the frozen 2014 run
 src/step11_robustness.py          step 11: 2015 and grade groups (per the freeze record)
 src/step12_interpretability.py    step 12: logit odds ratios and HGB permutation importance
-src/step13_final_outputs.py       step 13: final tables and figures for the manuscript (outputs/final/)
+src/step13_final_outputs.py       step 13: final tables and figures (outputs/final/)
 src/reproduce_all.py              step 15: rerun everything and check every committed result
-submission/                       manuscript as PDF and Word, and the script that builds them
 decision_records/                 approved step-4 decisions, unchanged, with SHA-256 manifest
 outputs/step5/ ... outputs/final/  summary tables and figures from each step (no loan-level data)
 notebooks/run_all_colab.ipynb     one-click rerun
@@ -149,5 +147,5 @@ Each run records the versions it used in `outputs/step5/step5_run_summary.json`.
 Two generative AI tools were used. ChatGPT (OpenAI) was used as an adviser in the design phase, to
 discuss and review the research design. Claude (Anthropic) was used as an adviser for specification
 review, as a coding assistant that wrote and ran this code under the author's direction, and to draft
-the manuscript from the signed-off results. Every methodological decision was made and approved by the
+the manuscript (handed in separately) from the signed-off results. Every methodological decision was made and approved by the
 author; the decision records are in `decision_records/` and the control document's change log.
