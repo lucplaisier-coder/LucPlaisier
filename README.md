@@ -27,6 +27,7 @@ The full locked specification, with its change log, is in
 | 13 Final figures and tables | Signed off 24 Nov 2026 (`decision_records/step13_signoff.json`, [report](docs/step13_report.md), [all tables](docs/final_tables.md)) |
 | 14 Manuscript | Signed off 25 Nov 2026 (`decision_records/step14_signoff.json`, [PDF](submission/manuscript.pdf), [Word](submission/manuscript.docx), [manuscript](docs/manuscript.md), [report](docs/step14_report.md)) |
 | 15 Reproducibility audit | Signed off 26 Nov 2026 (`decision_records/step15_signoff.json`, [report](docs/step15_report.md)): fresh clone, clean install, full rerun from the raw file, every table and figure identical |
+| 16 Defence preparation | Awaiting sign-off ([2-minute script and 20 Q&As](docs/defence_prep.md)) |
 
 ## Run everything
 
