@@ -59,7 +59,7 @@ title ("reproduction" instead of "test"), and they go to a separate folder.
 
 ## What I need from you
 
-**Sign off step 15**, and decide on the repository access (public, or add the marker). Next on your
+**Signed off by Lucas on 26 Nov 2026 ("approved").** Open: repository access for the marker. Next on the
 roadmap: step 16 (defence preparation).
 
 ## 4. Colab run by Lucas (25 Nov) and the fix
