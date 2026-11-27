@@ -46,7 +46,7 @@ The full locked specification, with its change log, is in
 | 12 Interpretability | Signed off 24 Nov 2026 ([report](docs/step12_report.md), `decision_records/step12_signoff.json`) |
 | 13 Final figures and tables | Signed off 24 Nov 2026 (`decision_records/step13_signoff.json`, [report](docs/step13_report.md), [all tables](docs/final_tables.md)) |
 | 14 Manuscript | Signed off 25 Nov 2026 (`decision_records/step14_signoff.json`); handed in as a separate document, kept outside this repository |
-| 15 Reproducibility audit | Signed off 26 Nov 2026 (`decision_records/step15_signoff.json`, [report](docs/step15_report.md)): fresh clone, clean install, full rerun from the raw file. Checker hardened 27 Nov 2026 (full inventory, failed stages stop the run). On 27 Nov the author ran every stage at the analysis commit in Colab, and all returned 0 (run record shown in chat), but the verdict line of that run was not saved. A saved, complete verification record is still missing |
+| 15 Reproducibility audit | Signed off 26 Nov 2026 (`decision_records/step15_signoff.json`, [report](docs/step15_report.md)): fresh clone, clean install, full rerun from the raw file. Checker hardened 27 Nov 2026 (full inventory, failed stages stop the run). On 27 Nov (about 15:50 CET) a full Colab run of the pinned notebook ended with `VERDICT: REPRODUCED` (the author kept a screenshot of the verdict; the run record itself was not kept). An earlier run that day completed every stage, but its verdict line was not saved |
 | 16 Defence preparation | Signed off 26 Nov 2026 (slides and Q&A kept outside this repository) |
 | 17 Submission | Final version of this repository; see "For the marker" above |
 
@@ -202,8 +202,9 @@ What is actually recorded about past runs (nothing more is known):
 * the step 15 reruns: Python 3.12 and 3.13 on a 4-core cloud machine (`docs/step15_report.md`,
   `outputs/step15/`); memory and full package lists were not recorded;
 * Luc's Colab runs of 25-26 Nov (Colab's Python 3.12; no package list kept);
-* Luc's Colab run of 27 Nov at the analysis commit: Python 3.13.18, the pinned versions, all stages
-  returned 0, about 16 minutes (its run record, as pasted by the author; the verdict line was not saved).
+* Luc's Colab runs of 27 Nov at the analysis commit: the first (08:48 UTC) used Python 3.13.18 and the pinned
+  versions, and all stages returned 0 in about 16 minutes (its run record, as pasted by the author; verdict
+  line not saved); the second (about 14:50 UTC) ended with `VERDICT: REPRODUCED` (screenshot of the verdict only).
 
 From 27 Nov every `reproduce_all` run writes the Python version, platform and installed versions of the
 pinned packages to `outputs/reproduce/run_record.json`.
