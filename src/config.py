@@ -100,10 +100,16 @@ EXPECTED_RESOLVED_COUNTS = {
 }
 
 # ---------------------------------------------------------------------------
-# 4. The nine proposed inputs (F.5 + approved change log). NOT FROZEN.
+# 4. The nine inputs as built by step 5 (F.5 + approved change log).
 # ---------------------------------------------------------------------------
-# Lucas decides the feature freeze (Gate 2 / roadmap). Until then this is the
-# *proposed* list from preparation rules G2-PREP-2026-11-24-v1.
+# Current state (note added 27 Nov 2026): these nine inputs were FROZEN by Lucas
+# on 24 Nov 2026 (Gate 2, decision_records/gate2_feature_freeze.json). The
+# frozen list that every model uses is src/features.py, which holds the same
+# nine names. The "PROPOSED_" names and FEATURES_FROZEN = False below are kept
+# unchanged on purpose: step 5 ran before the freeze and writes this flag into
+# outputs/step5/step5_run_summary.json, so changing it would change a
+# committed step-5 output and break the byte-exact reproduction check. Read
+# them as "the list step 5 builds", not as "not yet frozen".
 # verification_status was removed on 24 Nov (decision G2-VERIFY-EXCLUDE).
 PROPOSED_NUMERIC_INPUTS = [
     "fico_mid",        # P1 average of the two FICO bounds at origination
@@ -118,7 +124,7 @@ PROPOSED_NOMINAL_INPUTS = [
     "home_ownership",  # P5 RENT / OWN / MORTGAGE / OTHER / NONE / ANY
     "purpose",         # P6 stated purpose of the loan
 ]
-FEATURES_FROZEN = False   # Only Lucas can change this, at the freeze step.
+FEATURES_FROZEN = False   # Historical step-5 flag (see note above); the freeze is in src/features.py.
 
 # Employment length labels (preparation rules, employment_mapping).
 EMPLOYMENT_MAP = {

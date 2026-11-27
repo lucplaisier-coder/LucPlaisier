@@ -3,9 +3,12 @@ rates.py: apply the approved interest-rate fix for 148 loans (G2-RATE-2026-11-24
 
 Plain-language summary
 ----------------------
-For 148 loans the raw file stores a rate that is NOT the rate investors saw
-at listing (mostly 6.00%, a later servicing rate). Lucas approved replacing
-them with the listing rate published in Lending Club's SEC filings.
+For 148 loans the raw file stores a rate that differs from the listing rate in
+Lending Club's SEC posting supplements (146 of them exactly 6.00%). The stored
+value is strongly linked to the outcome, so using it risks leaking information
+that arose after issue; a 6% cap is consistent with a known servicing mechanism,
+but the cause and timing are not proven loan by loan. Lucas approved replacing
+them with the sourced listing rate.
 
 What this module does:
   1. Checks that the approved decision files are byte-for-byte unchanged

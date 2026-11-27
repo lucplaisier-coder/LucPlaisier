@@ -15,7 +15,8 @@ Plain-language summary of what happens
  4. Apply the approved 148-loan interest-rate fix (G2-RATE).
  5. Check how many loans per year have a final status (F.4 resolution rule).
  6. Keep final-status loans and set the target (Charged Off = 1, Fully Paid = 0).
- 7. Build the nine proposed inputs with fixed formulas (P1-P9). Nothing is learned.
+ 7. Build the nine inputs with fixed formulas (P1-P9; proposed when step 5 ran, frozen
+    later on 24 Nov 2026 in src/features.py). Nothing is learned.
  8. Write four loan-level files to data/clean/ (NOT uploaded to GitHub):
       step5_inputs.parquet                    inputs for all years 2010-2015
       step5_audit.parquet                     lineage: stored rate, raw labels,
@@ -29,7 +30,7 @@ Plain-language summary of what happens
 
 What this script deliberately does NOT do
 -----------------------------------------
-* It does not freeze the feature list (Lucas decides that).
+* It does not freeze the feature list (the author did that afterwards, at Gate 2).
 * It does not fit anything: no medians, scaling, category lists or models.
 * It does not compute any outcome statistic for 2014 or 2015.
 """
