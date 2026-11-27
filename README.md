@@ -223,5 +223,5 @@ scoring was done by the code in this repository, run by Claude and by the author
 specification review, wrote and ran this code under the author's direction as a coding assistant,
 drafted the manuscript (handed in separately) from the signed-off results, and checked it and the
 reproduction checks against the external reviews. Every methodological decision was made and approved
-by the author; the decision records are in `decision_records/` and the control document's change log.
-(This description awaits the author's personal confirmation.)
+by the author; the decision records are in `decision_records/` and the control document's change log. The author confirmed this
+description on 27 Nov 2026.
