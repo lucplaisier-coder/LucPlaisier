@@ -4,7 +4,8 @@ Capstone project, AI for Finance (Type A, Industry Focus). Author: Luc Plaisier.
 
 **Research question.** Among already-approved, listed 36-month Lending Club loans, does histogram
 gradient boosting, used to select loans within each credit grade, give lower charge-off rates,
-lower principal losses and higher lifetime net cash gains than Lending Club's own sub-grade ranking
+lower principal losses and higher net cash gains (cash recorded up to the data extract, about March
+2019, not annualised) than Lending Club's own sub-grade ranking
 and a regularised logistic regression, on a later vintage not used for fitting or tuning? Funding every loan
 is the reference. This is a retrospective experiment across issue-year cohorts, using outcomes observed
 later (to about March 2019); it is not a strategy that could have been trained and run live in 2014,
@@ -19,8 +20,11 @@ The full locked specification, with its change log, is in
 |---|---|
 | Manuscript | Handed in as a separate document; this repository holds only the code and the results it produces |
 | Every final table and figure | [`docs/final_tables.md`](docs/final_tables.md) and `outputs/final/` |
-| Rerun everything and check it | `python -m src.reproduce_all --expect-commit <SHA>` (about 8 minutes; prints `REPRODUCED` only after a complete, successful run), or the Colab notebook below |
-| Code version to check | Analysis commit `ba250b763c0bc3e75e1b0ee6b6fb39c80d0f21f0` (see "Version pin" below) |
+| Code version to check | Analysis commit `ba250b763c0bc3e75e1b0ee6b6fb39c80d0f21f0`: all analysis code and committed results (see "Version pin" below) |
+| Notebook to run | The supplied notebook (`notebooks/run_all_colab.ipynb` on `main`; handed in as a copy). It is already pinned to the analysis commit: open it in Colab and choose *Runtime > Run all* |
+| This README | Lives on `main`, in a later documentation and launcher commit. The README inside the analysis commit was written before the pin and still says "PENDING"; this version replaces it. No analysis file differs between the two commits |
+| Access | The repository is public (checked 27 Nov 2026), so no GitHub account or token is needed. The raw data is not included: it is a free Kaggle download (Kaggle account or API key), or a copy of the file |
+| Rerun everything and check it | The notebook, or `python -m src.reproduce_all --expect-commit ba250b763c0bc3e75e1b0ee6b6fb39c80d0f21f0` in a checkout of that commit (about 8 minutes on a 4-core machine, about 16 in Colab; prints `REPRODUCED` only after a complete, successful run) |
 | What was seen before the freeze | [`decision_records/clarification_2026-11-27_test_years_and_reproduction.md`](decision_records/clarification_2026-11-27_test_years_and_reproduction.md) |
 | Locked method and change log | [`docs/methodology_freeze_v1.md`](docs/methodology_freeze_v1.md), [`docs/project_control_document.md`](docs/project_control_document.md) |
 | One-time test logs (2014, 2015) | `outputs/step9/test_opened_log.json`, `outputs/step11/robustness_2015_opened_log.json` |
@@ -42,17 +46,24 @@ The full locked specification, with its change log, is in
 | 12 Interpretability | Signed off 24 Nov 2026 ([report](docs/step12_report.md), `decision_records/step12_signoff.json`) |
 | 13 Final figures and tables | Signed off 24 Nov 2026 (`decision_records/step13_signoff.json`, [report](docs/step13_report.md), [all tables](docs/final_tables.md)) |
 | 14 Manuscript | Signed off 25 Nov 2026 (`decision_records/step14_signoff.json`); handed in as a separate document, kept outside this repository |
-| 15 Reproducibility audit | Signed off 26 Nov 2026 (`decision_records/step15_signoff.json`, [report](docs/step15_report.md)): fresh clone, clean install, full rerun from the raw file. Checker hardened 27 Nov 2026 (exact bytes, full inventory, failed stages stop the run); the hardened check has not yet been run on the real data |
+| 15 Reproducibility audit | Signed off 26 Nov 2026 (`decision_records/step15_signoff.json`, [report](docs/step15_report.md)): fresh clone, clean install, full rerun from the raw file. Checker hardened 27 Nov 2026 (full inventory, failed stages stop the run). On 27 Nov the author ran every stage at the analysis commit in Colab, and all returned 0 (run record shown in chat), but the verdict line of that run was not saved. A saved, complete verification record is still missing |
 | 16 Defence preparation | Signed off 26 Nov 2026 (slides and Q&A kept outside this repository) |
 | 17 Submission | Final version of this repository; see "For the marker" above |
 
 ## Run everything
 
-**Colab (one click):** open [`notebooks/run_all_colab.ipynb`](notebooks/run_all_colab.ipynb) in Google Colab,
-set `CODE_COMMIT` in the first code cell, and choose *Runtime > Run all*. It clones the code, checks out
-exactly that commit (and refuses an existing checkout at another commit or with modified files), installs
-the pinned packages into the Python that runs the steps, gets the raw file (Google Drive or Kaggle API)
-and runs every stage. Every command is checked: the notebook stops at the first failure.
+**Colab (one click):** open [`notebooks/run_all_colab.ipynb`](notebooks/run_all_colab.ipynb) in Google Colab
+and choose *Runtime > Run all*. `CODE_COMMIT` is already set to the analysis commit. The notebook clones the
+public repository, checks out exactly that commit (and refuses an existing checkout at another commit or
+with modified files), installs the pinned packages into the Python that runs the steps, gets the raw file
+(Google Drive or Kaggle API) and runs every stage. Every command is checked: the notebook stops at the first
+failure. The last cell ends with `VERDICT: REPRODUCED` or `VERDICT: NOT REPRODUCED`; copy that cell's output
+as the record of the run.
+
+*Credentials.* No GitHub token is needed. If the repository were private, a Colab secret `GITHUB_TOKEN` is
+handed to `git clone` only through an environment variable read by a `GIT_ASKPASS` helper. It is never
+put in a command, a URL or the stored git remote, and printed commands and error messages are redacted.
+The Kaggle key is likewise passed only through the environment.
 
 **Your own computer** (tested with Python 3.12 and 3.13):
 
@@ -70,10 +81,14 @@ python -m src.reproduce_all --expect-commit <full commit SHA>   # every stage (a
 * the code is the commit given with `--expect-commit` (or, without it, the commit printed) and no tracked
   code file is modified;
 * every file in the expected-artifact inventory (`reproduction/expected_artifacts.json`, 104 committed
-  result files) is present: files the stages rewrite must have been rewritten by this run and be
-  byte-identical to the committed version; the 2014 and 2015 one-time tables must be reproduced byte for
-  byte in `outputs/reproduce/`; one-time logs must be unchanged; the five run-summary files must match
-  except for their time, duration and machine fields.
+  result files) passes the check for its class:
+  * **80 regenerated files** must have been rewritten by this run and be byte-identical to the committed version;
+  * **13 one-time 2014/2015 tables** must be reproduced byte for byte in `outputs/reproduce/`, and the committed
+    originals must be unchanged;
+  * **6 historical records** (the two one-time test logs, the two reliability figures from those runs and the
+    two step 15 rerun logs) are not regenerated; they must be present and unchanged;
+  * **5 run summaries** must match except for listed fields: run timestamp and duration, plus Python version
+    and platform for step 5.
 
 There is no numerical tolerance. Unchanged committed files alone cannot pass. (The steps' own
 `--reproduce` comparison uses pandas' default tolerance and is only an early warning; the verdict is
@@ -111,7 +126,8 @@ to run again. `--reproduce` runs the same frozen code and writes to `outputs/rep
 
 The raw data is **not** in this repository (size and licence). Source: Kaggle dataset
 [`wordsforthewise/lending-club`](https://www.kaggle.com/datasets/wordsforthewise/lending-club),
-file `accepted_2007_to_2018Q4.csv.gz` (2,260,701 loan rows, 151 columns).
+file `accepted_2007_to_2018Q4.csv.gz` (2,260,701 CSV records, 151 columns: 2,260,668 loans plus 33
+summary/footer rows; the step 5 summary's `raw_rows_read` counts all records).
 
 * **Kaggle API:** create an API key (kaggle.com > Settings > API), set `KAGGLE_USERNAME` and
   `KAGGLE_KEY` (or place `kaggle.json` in `~/.kaggle/`), then run
@@ -185,7 +201,9 @@ What is actually recorded about past runs (nothing more is known):
   one-time logs);
 * the step 15 reruns: Python 3.12 and 3.13 on a 4-core cloud machine (`docs/step15_report.md`,
   `outputs/step15/`); memory and full package lists were not recorded;
-* Lucas's Colab runs of 25-26 Nov (Colab's Python 3.12; no package list kept).
+* Luc's Colab runs of 25-26 Nov (Colab's Python 3.12; no package list kept);
+* Luc's Colab run of 27 Nov at the analysis commit: Python 3.13.18, the pinned versions, all stages
+  returned 0, about 16 minutes (its run record, as pasted by the author; the verdict line was not saved).
 
 From 27 Nov every `reproduce_all` run writes the Python version, platform and installed versions of the
 pinned packages to `outputs/reproduce/run_record.json`.
@@ -193,12 +211,17 @@ pinned packages to `outputs/reproduce/run_record.json`.
 **Memory.** The paired bootstrap keeps a 1,000 x n weight matrix in 64-bit floats. For 2015
 (n = 282,787) that is 2.1 GiB, and the weighted copy made inside each calculation is another 2.1 GiB, so
 step 11 needs roughly 4.2 GiB for these arrays alone (about 2.5 GiB for 2014). Plan for at least 8 GB of
-RAM; a standard Colab session (about 12 GB) is enough. Run time is about 8 minutes on a 4-core machine.
+RAM; a standard Colab session (about 12 GB) is enough. Total process memory was not measured. Run time is
+about 8 minutes on a 4-core machine and was about 16 minutes in Colab.
 
 ## GenAI disclosure
 
-Two generative AI tools were used. ChatGPT (OpenAI) was used as an adviser in the design phase, to
-discuss and review the research design. Claude (Anthropic) was used as an adviser for specification
-review, as a coding assistant that wrote and ran this code under the author's direction, and to draft
-the manuscript (handed in separately) from the signed-off results. Every methodological decision was made and approved by the
-author; the decision records are in `decision_records/` and the control document's change log.
+Two families of generative AI tools were used. OpenAI's ChatGPT and Codex advised on the research design
+and reviewed the work as an external reviewer: data evidence, code, financial calculations, the
+manuscript and the defence materials. They also helped prepare review prompts. All model fitting and
+scoring was done by the code in this repository, run by Claude and by the author. Claude (Anthropic) advised on
+specification review, wrote and ran this code under the author's direction as a coding assistant,
+drafted the manuscript (handed in separately) from the signed-off results, and checked it and the
+reproduction checks against the external reviews. Every methodological decision was made and approved
+by the author; the decision records are in `decision_records/` and the control document's change log.
+(This description awaits the author's personal confirmation.)
