@@ -1,6 +1,6 @@
 # Does gradient boosting add value beyond platform pricing? (Lending Club, 36-month loans)
 
-Capstone project, AI for Finance (Type A, Industry Focus). Author: Lucas.
+Capstone project, AI for Finance (Type A, Industry Focus). Author: Luc Plaisier.
 
 **Research question.** Among already-approved, listed 36-month Lending Club loans, does histogram
 gradient boosting, used to select loans within each credit grade, give lower charge-off rates,

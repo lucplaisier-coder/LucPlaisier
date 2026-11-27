@@ -3,7 +3,7 @@
 This note is **new**. It was written on 27 November 2026, after an external review of the
 submission snapshot (PR 14, commit `e14ed82`). It does not change, replace or backdate any earlier
 record, approval or result. The earlier records below stay byte-for-byte as they were signed; this note
-only explains how to read some of their wording. It records no new decision by Lucas.
+only explains how to read some of their wording. It records no new decision by the author.
 
 ## 1. "Sealed", "unopened", "untouched": what was and was not seen before the freeze
 

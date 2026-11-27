@@ -30,7 +30,7 @@ Plain-language summary of what happens
 
 What this script deliberately does NOT do
 -----------------------------------------
-* It does not freeze the feature list (Lucas did that afterwards, at Gate 2).
+* It does not freeze the feature list (the author did that afterwards, at Gate 2).
 * It does not fit anything: no medians, scaling, category lists or models.
 * It does not compute any outcome statistic for 2014 or 2015.
 """
