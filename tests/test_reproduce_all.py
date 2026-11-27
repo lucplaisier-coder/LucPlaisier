@@ -271,7 +271,9 @@ class Figure3RedrawTests(unittest.TestCase):
         labels = [t.get_text() for t in ax.get_yticklabels()]
         self.assertEqual(widths, data["mean_auc_drop"].tolist())
         self.assertEqual(labels, data["label"].tolist())
-        err = ax.containers[0].errorbar.lines[2][0].get_segments()
+        from matplotlib.container import ErrorbarContainer
+        eb = next(c for c in ax.containers if isinstance(c, ErrorbarContainer))
+        err = eb.lines[2][0].get_segments()
         half_widths = [(s[1][0] - s[0][0]) / 2 for s in err]
         for h, sd in zip(half_widths, data["sd_over_repeats"]):
             self.assertAlmostEqual(h, sd, places=12)

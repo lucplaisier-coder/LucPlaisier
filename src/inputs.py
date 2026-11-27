@@ -1,5 +1,5 @@
 """
-inputs.py: turn raw columns into the nine proposed inputs (rules P1-P9).
+inputs.py: turn raw columns into the nine inputs (rules P1-P9; frozen 24 Nov 2026, see src/features.py).
 
 Plain-language summary
 ----------------------
