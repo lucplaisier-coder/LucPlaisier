@@ -20,7 +20,7 @@ The full locked specification, with its change log, is in
 | Manuscript | Handed in as a separate document; this repository holds only the code and the results it produces |
 | Every final table and figure | [`docs/final_tables.md`](docs/final_tables.md) and `outputs/final/` |
 | Rerun everything and check it | `python -m src.reproduce_all --expect-commit <SHA>` (about 8 minutes; prints `REPRODUCED` only after a complete, successful run), or the Colab notebook below |
-| Code version to check | **PENDING**: the submission commit and tag are fixed when the final changes are merged (see "Version pin" below) |
+| Code version to check | Analysis commit `ba250b763c0bc3e75e1b0ee6b6fb39c80d0f21f0` (see "Version pin" below) |
 | What was seen before the freeze | [`decision_records/clarification_2026-11-27_test_years_and_reproduction.md`](decision_records/clarification_2026-11-27_test_years_and_reproduction.md) |
 | Locked method and change log | [`docs/methodology_freeze_v1.md`](docs/methodology_freeze_v1.md), [`docs/project_control_document.md`](docs/project_control_document.md) |
 | One-time test logs (2014, 2015) | `outputs/step9/test_opened_log.json`, `outputs/step11/robustness_2015_opened_log.json` |
@@ -93,11 +93,10 @@ python -m src.step13_final_outputs          # collects saved results; no new ana
 python -m src.present_figures               # redraws Figure 3 from outputs/final/figure3_data.csv only
 ```
 
-**Version pin.** A file cannot contain its own commit identifier, so the pin lives outside the analysis
-code: once the final changes are merged, the submission commit is tagged and its full SHA is written into
-the notebook's `CODE_COMMIT` and the manuscript (a later, launcher-only commit may do this; the notebook
-then checks out and verifies the pinned analysis commit). Until then the pin is **pending** and a run
-reports only which commit it checked.
+**Version pin.** The submission's analysis commit is `ba250b763c0bc3e75e1b0ee6b6fb39c80d0f21f0` (merge of PR #16, 27 Nov 2026). A file cannot
+contain its own commit identifier, so the notebook that pins it lives in a later, launcher-only commit and
+checks out and verifies that analysis commit. On your own computer:
+`git checkout ba250b763c0bc3e75e1b0ee6b6fb39c80d0f21f0 && python -m src.reproduce_all --expect-commit ba250b763c0bc3e75e1b0ee6b6fb39c80d0f21f0`.
 
 **Tests of the checker** (synthetic fixtures only; no data, no model, a few seconds):
 `python -m unittest discover -s tests -v`. Passing them says the checker works, not that the project
