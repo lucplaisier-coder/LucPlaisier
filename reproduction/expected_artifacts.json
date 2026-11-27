@@ -1,0 +1,758 @@
+{
+ "description": "Expected artifacts of a full reproduction (src/reproduce_all.py). SHA-256 values are those of the committed result files.",
+ "files": {
+  "docs/final_tables.md": {
+   "class": "regenerated",
+   "sha256": "ba279c6796dbd5a7d8d2f9bb1b1b821fe6894491baf2d320347b685cad3bcaac"
+  },
+  "outputs/final/annexA1_financial_contrasts_2015.csv": {
+   "class": "regenerated",
+   "sha256": "227d35a6a5febb7f2780617ad1b37910b37359f0048432fd322968ada2c5be78"
+  },
+  "outputs/final/annexA1_financial_levels_2015.csv": {
+   "class": "regenerated",
+   "sha256": "8dc43edabe017fb2c55b9eb678352e22ea393768187bee9880c60133636bc0cf"
+  },
+  "outputs/final/annexA2_grade_groups.csv": {
+   "class": "regenerated",
+   "sha256": "0d47c50b2e8c81fea34d097f5511821fbc054cc31f729bb05885d403f1741371"
+  },
+  "outputs/final/annexA3_fee0_sensitivity.csv": {
+   "class": "regenerated",
+   "sha256": "01c120cfabb298d92b4376898ecffc1c110a0b90415fbc69928b5dcc8f5822d7"
+  },
+  "outputs/final/annexA4_subgrade_mix_2014.csv": {
+   "class": "regenerated",
+   "sha256": "0a3dc4e1baa7478f793428c49b9708f2cbce49accd7f2572941c1fbfffae9efc"
+  },
+  "outputs/final/annexA5_logit_odds_ratios.csv": {
+   "class": "regenerated",
+   "sha256": "8de6eeebf3de5cae5598f7131f00d4baf2e0e748f5d219b67311f81ec4e66c86"
+  },
+  "outputs/final/annexA6_logit_all_coefficients.csv": {
+   "class": "regenerated",
+   "sha256": "4cd249934f67e11f4d07afbed2297969f89f9d26dfd043a2776f6596653ffb6f"
+  },
+  "outputs/final/annexA7_success_categories.csv": {
+   "class": "regenerated",
+   "sha256": "ec5aec5497f0706e7f204b191075e779bd270765497f9c0cadacebd40ddd9143"
+  },
+  "outputs/final/annexA8_inputs_whitelist_blacklist.csv": {
+   "class": "regenerated",
+   "sha256": "809bf69066e6b1457a83cf957533cc2187319dd17c67bf863fe71e85c26a8ac8"
+  },
+  "outputs/final/figure1_reliability_2014_2015.png": {
+   "class": "regenerated",
+   "sha256": "58c4de2dd0c72d15e263402708e82469a525573c0f021940c46b700738451d09"
+  },
+  "outputs/final/figure2_data.csv": {
+   "class": "regenerated",
+   "sha256": "9404b4c6e5eaecfbdfecc0d11b101901323f82b35e1c518489c97f81b8c848a5"
+  },
+  "outputs/final/figure2_selection_rate_curve_2014.png": {
+   "class": "regenerated",
+   "sha256": "248ce879c8eff5dbe14a76826c0347d761b52b31295f95d0855908cd57cdb81b"
+  },
+  "outputs/final/figure3_data.csv": {
+   "class": "regenerated",
+   "sha256": "9094f7debf6dcd15dbf8973d063c6c5edd4e5103a374ff428ac89d933f500e59"
+  },
+  "outputs/final/figure3_permutation_importance_2014.png": {
+   "class": "regenerated",
+   "sha256": "5379600666a667265ce9c466b817bb5932658393dee4e763c49658421d17c22e"
+  },
+  "outputs/final/table1_sample_by_vintage.csv": {
+   "class": "regenerated",
+   "sha256": "554485f6a8182acb1e8908074d091263e385693d90fbc4950b6786db8769615e"
+  },
+  "outputs/final/table2_predictive.csv": {
+   "class": "regenerated",
+   "sha256": "980ef4ee18b85abf721208ff2fe7bdf9ee3d5dedc3f34181c7c80ec75669ebc5"
+  },
+  "outputs/final/table3_financial_contrasts_2014.csv": {
+   "class": "regenerated",
+   "sha256": "d351fa9c0ff995a397230e5dcd52bdd867495ceb58eece01b6692ff763a3c7fc"
+  },
+  "outputs/final/table3_financial_levels_2014.csv": {
+   "class": "regenerated",
+   "sha256": "704589a7418074ab722050c1f4b7e4605a81a5f8fc7d8ca6604732f9d2841bee"
+  },
+  "outputs/presentation/figure3_permutation_importance_2014.png": {
+   "class": "regenerated",
+   "sha256": "02a45c4ef44d5e5563107ca60e969f11908629cb1c69a05306f55e1bf40339bd"
+  },
+  "outputs/step10/annex_fee0_sensitivity_2014.csv": {
+   "class": "regenerated",
+   "sha256": "c656319ff92e2981b9550575dade998b3f67c9ada733731e6ed875c15991495d"
+  },
+  "outputs/step10/annex_inputs_whitelist.csv": {
+   "class": "regenerated",
+   "sha256": "e0e4fd43514c9a170eae32350707250fd33cad36ff49e53dfc5e296ada47f2a5"
+  },
+  "outputs/step10/annex_subgrade_mix_2014.csv": {
+   "class": "regenerated",
+   "sha256": "084c037e1f6236cdf7ce4a53cfe86ec744e1181fd2ddb19cff7c093bb152882b"
+  },
+  "outputs/step10/output1_sample_by_vintage.csv": {
+   "class": "regenerated",
+   "sha256": "65dcbaefbd453620a44f680ae4c1c391d7c4552a97e28daafa75a63e5e59a1e3"
+  },
+  "outputs/step10/output2_predictive.csv": {
+   "class": "regenerated",
+   "sha256": "037bf3da596a99175bc717567a9c7f9408a7562403f98f9bbc2520b6ec160bcc"
+  },
+  "outputs/step10/output3_reliability_2014.png": {
+   "class": "regenerated",
+   "sha256": "02afe9e5114c5e342a6799cf3002bc216bfb833d95f4a0d38d5ae1974984b87b"
+  },
+  "outputs/step10/output4_selection_rate_curve_2014.csv": {
+   "class": "regenerated",
+   "sha256": "9404b4c6e5eaecfbdfecc0d11b101901323f82b35e1c518489c97f81b8c848a5"
+  },
+  "outputs/step10/output4_selection_rate_curve_2014.png": {
+   "class": "regenerated",
+   "sha256": "248ce879c8eff5dbe14a76826c0347d761b52b31295f95d0855908cd57cdb81b"
+  },
+  "outputs/step10/output6a_financial_2014_q80.csv": {
+   "class": "regenerated",
+   "sha256": "1cb528ea40b4b52b311bf72c63d79fc771444db998d0cca42abf2670c170eadb"
+  },
+  "outputs/step10/output6b_contrasts_2014_q80.csv": {
+   "class": "regenerated",
+   "sha256": "164bdd157ebcfa56e772987d2d164d52007d24866c06e876c1a98a6748d97013"
+  },
+  "outputs/step11/bootstrap_contrasts_2015.csv": {
+   "class": "reproduce_copy",
+   "copy": "outputs/reproduce/step11/bootstrap_contrasts_2015.csv",
+   "sha256": "cedd573fbff8f126752d0b47c019f78f0689a3eb0f483c7580be2e3294371328"
+  },
+  "outputs/step11/financial_2015_q80.csv": {
+   "class": "reproduce_copy",
+   "copy": "outputs/reproduce/step11/financial_2015_q80.csv",
+   "sha256": "0684109da5cd9d6015fcd1aebb395acdd1cfe2b7761b013b6bccb4369dd821c1"
+  },
+  "outputs/step11/grade_groups_2014_2015.csv": {
+   "class": "reproduce_copy",
+   "copy": "outputs/reproduce/step11/grade_groups_2014_2015.csv",
+   "sha256": "b7f16433fc0907d7bb4c257f2eaee65a8738acdd3caad618e5d435ff15a3ece4"
+  },
+  "outputs/step11/predictive_2015.csv": {
+   "class": "reproduce_copy",
+   "copy": "outputs/reproduce/step11/predictive_2015.csv",
+   "sha256": "5b57e8e28ff6973a5503b15752ca34d344e614035a75ff2dfd88844c80059b44"
+  },
+  "outputs/step11/reliability_2015.png": {
+   "class": "historical",
+   "sha256": "cc90ccc10bd2b397dd2c2ab1be387264216528391c9b526394c591d169ba03c1"
+  },
+  "outputs/step11/reliability_bins_hgb_2015.csv": {
+   "class": "reproduce_copy",
+   "copy": "outputs/reproduce/step11/reliability_bins_hgb_2015.csv",
+   "sha256": "c985552d4227f8f3aacd994d29729a1c87d9a99d9b4c3a44173030dd9e9552a1"
+  },
+  "outputs/step11/reliability_bins_logit_2015.csv": {
+   "class": "reproduce_copy",
+   "copy": "outputs/reproduce/step11/reliability_bins_logit_2015.csv",
+   "sha256": "042229687ee6c97fefce0cbf61c21288e4900dde0b659400e5b3224c85de96c3"
+  },
+  "outputs/step11/robustness_2015_opened_log.json": {
+   "class": "historical",
+   "sha256": "1d58ae21860f1600f4bd546dc4c79bc29e481e97e46dd540111770e3c6f9ec46"
+  },
+  "outputs/step11/success_categories_2015.csv": {
+   "class": "reproduce_copy",
+   "copy": "outputs/reproduce/step11/success_categories_2015.csv",
+   "sha256": "19465115cb537990a738967d3bd03cb66f72e3bf7bf00906f83891434ee6254f"
+  },
+  "outputs/step11_dryrun_2014/bootstrap_contrasts_2014.csv": {
+   "class": "regenerated",
+   "sha256": "b4cf15b191a4228962c6e191a7a391f28f0eaedd827462d5de67388b214e10db"
+  },
+  "outputs/step11_dryrun_2014/dryrun_summary.json": {
+   "class": "volatile",
+   "expected_json": {
+    "bootstrap_draws": 1000,
+    "categories": {
+     "AI adds economic value": true,
+     "AI adds predictive but not economic value": false,
+     "Platform pricing hard to beat": false,
+     "Simpler model preferable": false
+    },
+    "consistent_with_2014_if_this_were_2015": true,
+    "fg_merged": true,
+    "fit_loans": 166459,
+    "fit_years": [
+     2010,
+     2011,
+     2012,
+     2013
+    ],
+    "label": "robustness dry run",
+    "logit_converged": true,
+    "reproduces_step9_exactly": true,
+    "runtime_seconds": 68.2,
+    "test_loans": 162570,
+    "test_year": 2014
+   },
+   "ignored_keys": [
+    "runtime_seconds"
+   ],
+   "sha256": "43190c1cd9b0eb44b04b5ce8311e3f0ea1bb2fbb8c246055cc326ea9b5ad8ee2"
+  },
+  "outputs/step11_dryrun_2014/financial_2014_q80.csv": {
+   "class": "regenerated",
+   "sha256": "1cb528ea40b4b52b311bf72c63d79fc771444db998d0cca42abf2670c170eadb"
+  },
+  "outputs/step11_dryrun_2014/grade_groups_2014.csv": {
+   "class": "regenerated",
+   "sha256": "4673c5741be1311cd80e34ad60bb29ee52f14eba8014aa1332d611cade2b0018"
+  },
+  "outputs/step11_dryrun_2014/predictive_2014.csv": {
+   "class": "regenerated",
+   "sha256": "3ab3cf436a998edca4e1d346bf8b8eab8edcd96498bd496a52d7d736adcade63"
+  },
+  "outputs/step11_dryrun_2014/reliability_2014.png": {
+   "class": "regenerated",
+   "sha256": "6dc935a58eb9a973614886da76eaa678afd2f4a79c85201f5b5aa8fcd1ffe153"
+  },
+  "outputs/step11_dryrun_2014/reliability_bins_hgb_2014.csv": {
+   "class": "regenerated",
+   "sha256": "b4a8e43526d33d360940997a069d2210f301dd6fb4f1d036217a7eaa9f093c21"
+  },
+  "outputs/step11_dryrun_2014/reliability_bins_logit_2014.csv": {
+   "class": "regenerated",
+   "sha256": "f6bc8ca8500628f6de1973fef4a7a3adb6795eb451f80b385f092a60e513fa91"
+  },
+  "outputs/step11_dryrun_2014/success_categories_2014.csv": {
+   "class": "regenerated",
+   "sha256": "19465115cb537990a738967d3bd03cb66f72e3bf7bf00906f83891434ee6254f"
+  },
+  "outputs/step12/annex_logit_all_coefficients_final_fit.csv": {
+   "class": "regenerated",
+   "sha256": "4cd249934f67e11f4d07afbed2297969f89f9d26dfd043a2776f6596653ffb6f"
+  },
+  "outputs/step12/hgb_permutation_importance_2014.csv": {
+   "class": "regenerated",
+   "sha256": "9094f7debf6dcd15dbf8973d063c6c5edd4e5103a374ff428ac89d933f500e59"
+  },
+  "outputs/step12/hgb_permutation_importance_2014_raw.csv": {
+   "class": "regenerated",
+   "sha256": "5ec33c3a8830d3dc287f53a72d966eeed217c657a531e013d42436fc2cfd0515"
+  },
+  "outputs/step12/logit_odds_ratios_per_sd.csv": {
+   "class": "regenerated",
+   "sha256": "a38ab683f718f78b5e1b410b465fdcdd472ea09a861cfa29481bac9ce3fbb1d0"
+  },
+  "outputs/step12/output5_permutation_importance_2014.png": {
+   "class": "regenerated",
+   "sha256": "5379600666a667265ce9c466b817bb5932658393dee4e763c49658421d17c22e"
+  },
+  "outputs/step12/step12_run_summary.json": {
+   "class": "regenerated",
+   "sha256": "860aba158c1a2b481bb976c4c8ec900e74d4d2068d991d1c6659da526214deed"
+  },
+  "outputs/step15/rerun_log_python3.12.txt": {
+   "class": "historical",
+   "sha256": "ecd48d812d9939b01910ae8161974828c3fa1658e1268913c31582ee58460a90"
+  },
+  "outputs/step15/rerun_log_python3.13.txt": {
+   "class": "historical",
+   "sha256": "2e9862cf8efaa6d13a526af374278571295d2172c750a382b101f4c17439ae6e"
+  },
+  "outputs/step5/cash_identity_check_2010_2013.csv": {
+   "class": "regenerated",
+   "sha256": "45b6eb08c659aafb30b55834616b748e7bc94d22be62de7226bf5bbbf5377b7b"
+  },
+  "outputs/step5/category_counts_by_vintage.csv": {
+   "class": "regenerated",
+   "sha256": "b717b75ef8d32fa6bc066ebc0d0819aca3370c7ebb1b76738db12eb510579984"
+  },
+  "outputs/step5/funnel_by_vintage.csv": {
+   "class": "regenerated",
+   "sha256": "99affb3b34d47c93afdf93bcdd464f78c8357fca1638d7743d75101d5af30a77"
+  },
+  "outputs/step5/input_distribution_by_vintage.csv": {
+   "class": "regenerated",
+   "sha256": "11808ebeae0069ed091bb38460a95083bb4d7cc1cbbc3518ae8684879b4723aa"
+  },
+  "outputs/step5/input_missing_share_by_vintage.csv": {
+   "class": "regenerated",
+   "sha256": "c7f8f836650f3415f5b2ee59f3994ee80f8f14b394533f8eb916e3f62ade6b02"
+  },
+  "outputs/step5/input_out_of_training_range_by_vintage.csv": {
+   "class": "regenerated",
+   "sha256": "b08a3539759130b97e751664e7be7b0dff29ff9b2934706c846b2821927efaca"
+  },
+  "outputs/step5/rate_fix_audit_148.csv": {
+   "class": "regenerated",
+   "sha256": "3b877164e6f3501b2adf32b93c50e8023cc795263b2f84005594d74ee54e4d41"
+  },
+  "outputs/step5/rate_screens_still_flagged_after_fix.csv": {
+   "class": "regenerated",
+   "sha256": "1850b19568e610d8d367f107b9be296a38c81f473572459a95958e632101e175"
+  },
+  "outputs/step5/resolution_by_vintage.csv": {
+   "class": "regenerated",
+   "sha256": "2e369084e1ad53132395162a14ff4a711fe6004c2259a729ce28e091153e1d0e"
+  },
+  "outputs/step5/sample_by_vintage.csv": {
+   "class": "regenerated",
+   "sha256": "8236b0595610253948064dbeca8b0f5e96adf693b2c7d8b60e2ca870c85c4d29"
+  },
+  "outputs/step5/step5_run_summary.json": {
+   "class": "volatile",
+   "expected_json": {
+    "anything_fitted": false,
+    "candidate_pool_loans": 611963,
+    "clean_files": {
+     "SEALED_step5_outcomes_2014_2015.parquet": {
+      "columns": [
+       "id",
+       "vintage",
+       "split",
+       "target",
+       "funded_amnt",
+       "total_rec_prncp",
+       "total_rec_int",
+       "total_rec_late_fee",
+       "recoveries",
+       "collection_recovery_fee",
+       "total_pymnt"
+      ],
+      "rows": 445357,
+      "sha256": "ad178d541829312719aebfd23ac640a60d6377ef0023630be17a017f6bc35ea8"
+     },
+     "step5_audit.parquet": {
+      "columns": [
+       "id",
+       "vintage",
+       "int_rate_stored",
+       "int_rate_working",
+       "rate_overridden",
+       "verification_status_raw",
+       "emp_length_raw",
+       "home_ownership_raw",
+       "purpose_raw",
+       "annual_inc_raw"
+      ],
+      "rows": 611816,
+      "sha256": "276254a26a04213d07e722742363f492a5aad642db7b74be5122f51d1bc909b7"
+     },
+     "step5_inputs.parquet": {
+      "columns": [
+       "id",
+       "vintage",
+       "split",
+       "grade",
+       "sub_grade",
+       "fico_mid",
+       "dti",
+       "log_annual_inc",
+       "emp_length_ord",
+       "loan_amnt",
+       "sub_grade_ord",
+       "int_rate",
+       "home_ownership",
+       "purpose"
+      ],
+      "rows": 611816,
+      "sha256": "b826153b2f2f2ca3401c7b945151057452163743eec77e74d1ccbc18954b1ec5"
+     },
+     "step5_outcomes_2010_2013.parquet": {
+      "columns": [
+       "id",
+       "vintage",
+       "split",
+       "target",
+       "funded_amnt",
+       "total_rec_prncp",
+       "total_rec_int",
+       "total_rec_late_fee",
+       "recoveries",
+       "collection_recovery_fee",
+       "total_pymnt"
+      ],
+      "rows": 166459,
+      "sha256": "2313c2292f6db2fb136b64435c9b346e4547d803ffa5856286d46e31e4b37a9c"
+     }
+    },
+    "decisions_applied": [
+     "G2-RATE-2026-11-24-v1 (148 listing rates)",
+     "G2-VERIFY-EXCLUDE-2026-11-24-v1 (verification_status not an input; kept in audit file)",
+     "G2-PREP-2026-11-24-v1 (fixed per-loan rules P1-P9 only; nothing fitted)"
+    ],
+    "features_frozen": false,
+    "packages": {
+     "numpy": "2.3.5",
+     "pandas": "2.3.3",
+     "pyarrow": "22.0.0",
+     "scikit-learn": "1.9.1"
+    },
+    "platform": "Linux-6.18.44-fc-v819-x86_64-with-glibc2.39",
+    "proposed_nominal_inputs": [
+     "home_ownership",
+     "purpose"
+    ],
+    "proposed_numeric_inputs": [
+     "fico_mid",
+     "dti",
+     "log_annual_inc",
+     "emp_length_ord",
+     "loan_amnt",
+     "sub_grade_ord",
+     "int_rate"
+    ],
+    "python": "3.13.18",
+    "rate_fix": {
+     "cases_found_and_corrected": 148,
+     "corrected_by_vintage": {
+      "2010": 3,
+      "2011": 3,
+      "2012": 8,
+      "2013": 18,
+      "2014": 35,
+      "2015": 81
+     },
+     "ledger_cases": 148,
+     "screen_after_union": 0,
+     "screen_before_flags_outside_ledger": 0,
+     "screen_before_sparse_off_grid": 122,
+     "screen_before_stored_6": 146,
+     "screen_before_union": 147
+    },
+    "raw_file": "accepted_2007_to_2018Q4.csv.gz",
+    "raw_rows_read": 2260701,
+    "raw_sha256_after": "55c16f75120f897683f02e7aabcf080d0e4a20c4832feb1d592cfa941bd62a2d",
+    "raw_sha256_before": "55c16f75120f897683f02e7aabcf080d0e4a20c4832feb1d592cfa941bd62a2d",
+    "raw_unchanged": true,
+    "research_sample_by_split": {
+     "robustness": 282787,
+     "test": 162570,
+     "train": 66037,
+     "validation": 100422
+    },
+    "research_sample_loans": 611816,
+    "run_utc": "2026-11-24T20:30:07+00:00",
+    "runtime_seconds": 54.4,
+    "sealed_outcomes": {
+     "file": "data/clean/SEALED_step5_outcomes_2014_2015.parquet",
+     "rows": 445357,
+     "statistics_computed": "none (row count and file fingerprint only)",
+     "years": [
+      2014,
+      2015
+     ]
+    },
+    "step": "Roadmap step 5: clean dataset"
+   },
+   "ignored_keys": [
+    "run_utc",
+    "runtime_seconds",
+    "python",
+    "platform"
+   ],
+   "sha256": "06fe198f5ea2abe4ed2e8c2a4b6f9d18d664ddbe5a0a776639c182d3eed495be"
+  },
+  "outputs/step6/by_grade_validation_2013_q80.csv": {
+   "class": "regenerated",
+   "sha256": "cb87a28390663a5017a77210aa485748b955798b10f6662dfbbf1f9f54b933a5"
+  },
+  "outputs/step6/financial_validation_2013_q80.csv": {
+   "class": "regenerated",
+   "sha256": "8e74740ca9246ca156abc411ec0c31c870735a2dbfa3029a07d95eaccf0ac4fa"
+  },
+  "outputs/step6/grade_counts_2014_for_FG_rule.csv": {
+   "class": "regenerated",
+   "sha256": "f9fa3ae139799225769a1284117e2052df8d1138ffbb5e527ea8e6d4128fdb9e"
+  },
+  "outputs/step6/leakage_alarm_single_input_auc_2013.csv": {
+   "class": "regenerated",
+   "sha256": "8c39e2780d6411d307d597f8e3dfca31351725d793088b337fc574cf550d7005"
+  },
+  "outputs/step6/logit_coefficients_dev_fit_2010_2012.csv": {
+   "class": "regenerated",
+   "sha256": "0389ba976b57a0a1f769bbd14d6cb5e37ebdb04b0ca6954a03bc9d2624e59f0c"
+  },
+  "outputs/step6/logit_tuning_C_2013.csv": {
+   "class": "regenerated",
+   "sha256": "6bec9c5635a171e49903ae6e3525320469723a41291ca2512e0eea651f946c1a"
+  },
+  "outputs/step6/predictive_validation_2013.csv": {
+   "class": "regenerated",
+   "sha256": "65597b8b9c6cd03bb47a3550acbe5c8163c3377e959989a825a7da075250ec08"
+  },
+  "outputs/step6/reliability_bins_logit_2013.csv": {
+   "class": "regenerated",
+   "sha256": "17a5982043ff2f4bbc4f67fdc21491a512eb67e28a4d1c43ff73dcce71744c58"
+  },
+  "outputs/step6/reliability_logit_2013.png": {
+   "class": "regenerated",
+   "sha256": "17659431f3cadd7dcc32aee3cd6882694efa5ccb689c99934377a5e78646072f"
+  },
+  "outputs/step6/step6_run_summary.json": {
+   "class": "volatile",
+   "expected_json": {
+    "all_fits_converged": true,
+    "features_frozen_on": "2026-11-24",
+    "fg_merged": true,
+    "hgb_started": false,
+    "inputs": [
+     "fico_mid",
+     "dti",
+     "log_annual_inc",
+     "emp_length_ord",
+     "loan_amnt",
+     "sub_grade_ord",
+     "int_rate",
+     "home_ownership",
+     "purpose"
+    ],
+    "leakage_alarm_triggered": false,
+    "logit_C_chosen": 0.01,
+    "logit_C_grid": [
+     0.01,
+     0.1,
+     1.0
+    ],
+    "run_utc": "2026-11-24T20:37:47+00:00",
+    "runtime_seconds": 5.3,
+    "scikit_learn": "1.9.1",
+    "sealed_2014_2015_outcomes_opened": false,
+    "seed": 42,
+    "selection_rate": 0.8,
+    "step": "Roadmap step 6: baseline logistic + platform benchmark",
+    "train_loans": 66037,
+    "train_years": [
+     2010,
+     2011,
+     2012
+    ],
+    "validation_loans": 100422,
+    "validation_year": 2013
+   },
+   "ignored_keys": [
+    "run_utc",
+    "runtime_seconds"
+   ],
+   "sha256": "87e40bd650ccef35dc356ec78997a664930d8ee2bd97958576a02258c129405e"
+  },
+  "outputs/step6/subgrade_mix_selected_2013.csv": {
+   "class": "regenerated",
+   "sha256": "0bb75c8c1e6cf325957df8d0c468fa01e665fd85dc7d4f76de5d4dd413949314"
+  },
+  "outputs/step7/by_grade_validation_2013_q80.csv": {
+   "class": "regenerated",
+   "sha256": "08460c3b86c44c05f1dee5931f1a7e2f63243c48aa1333e8c7d6f2ee93ff8acc"
+  },
+  "outputs/step7/financial_validation_2013_q80.csv": {
+   "class": "regenerated",
+   "sha256": "da54d45a664603e5b0669d2db73bf2cd71daa2bf4be242124ba8e13fe3fa66e0"
+  },
+  "outputs/step7/hgb_tuning_2013.csv": {
+   "class": "regenerated",
+   "sha256": "9c4649892f8e8532866eb3b7d6cb3a9e448388d32f59a020e9659ce2322d8664"
+  },
+  "outputs/step7/logit_vs_hgb_overlap_2013.csv": {
+   "class": "regenerated",
+   "sha256": "82e2b9564d7c9bc8f7ffe74e9d6d8efdb8bb696479cc8393973338d911d996af"
+  },
+  "outputs/step7/predictive_validation_2013.csv": {
+   "class": "regenerated",
+   "sha256": "9907012eb93372f3fb681d5f3dedbbe0a484f19374980671d32806d61c39a13e"
+  },
+  "outputs/step7/reliability_2013.png": {
+   "class": "regenerated",
+   "sha256": "0f808e1552901bc60e82993212cf89d4c4a3a0064675195e02de7ad5f1a6ed88"
+  },
+  "outputs/step7/reliability_bins_hgb_2013.csv": {
+   "class": "regenerated",
+   "sha256": "eaf38700d2ba0d1777c07a69f8742e64a180436b26b80f28b0f3d4630ae558fb"
+  },
+  "outputs/step7/reliability_bins_logit_2013.csv": {
+   "class": "regenerated",
+   "sha256": "68744d537144d71cb27c0becec4bdd21680f3bed04c762520d015a76f7a4e6ee"
+  },
+  "outputs/step7/step7_run_summary.json": {
+   "class": "volatile",
+   "expected_json": {
+    "chosen_hgb_validation_auc": 0.6648858521795963,
+    "fg_merged": true,
+    "gate4_automatic_checks_passed": true,
+    "gate4_checks": {
+     "early_stopping_off_all_fits": true,
+     "grid_completed": true,
+     "no_leakage_alarm": true,
+     "probabilities_between_0_and_1": true
+    },
+    "hgb_chosen": {
+     "max_depth": 3,
+     "max_iter": 200
+    },
+    "hgb_fixed_settings": {
+     "early_stopping": false,
+     "learning_rate": 0.05,
+     "min_samples_leaf": 200,
+     "random_state": 42
+    },
+    "hgb_grid": [
+     [
+      3,
+      200
+     ],
+     [
+      3,
+      500
+     ],
+     [
+      5,
+      200
+     ],
+     [
+      5,
+      500
+     ]
+    ],
+    "inputs": [
+     "fico_mid",
+     "dti",
+     "log_annual_inc",
+     "emp_length_ord",
+     "loan_amnt",
+     "sub_grade_ord",
+     "int_rate",
+     "home_ownership",
+     "purpose"
+    ],
+    "logit_C_used": 0.01,
+    "logit_converged": true,
+    "plan_B12_expected_auc_range": [
+     0.65,
+     0.72
+    ],
+    "run_utc": "2026-11-24T20:52:07+00:00",
+    "runtime_seconds": 10.6,
+    "scikit_learn": "1.9.1",
+    "sealed_2014_2015_outcomes_opened": false,
+    "seed": 42,
+    "selection_rate": 0.8,
+    "step": "Roadmap step 7: add HistGB"
+   },
+   "ignored_keys": [
+    "run_utc",
+    "runtime_seconds"
+   ],
+   "sha256": "9b17b9037ee0e4f460ddd2357d2b147d72c2f79aa9745d3c77e7f1328ed84091"
+  },
+  "outputs/step7/subgrade_mix_selected_2013.csv": {
+   "class": "regenerated",
+   "sha256": "000358fdb1f6ff15c177219babb6f8a6751207acc3dad38116487ec37a985abf"
+  },
+  "outputs/step9/bootstrap_contrasts_2014.csv": {
+   "class": "reproduce_copy",
+   "copy": "outputs/reproduce/step9/bootstrap_contrasts_2014.csv",
+   "sha256": "b4cf15b191a4228962c6e191a7a391f28f0eaedd827462d5de67388b214e10db"
+  },
+  "outputs/step9/financial_2014_q80.csv": {
+   "class": "reproduce_copy",
+   "copy": "outputs/reproduce/step9/financial_2014_q80.csv",
+   "sha256": "1cb528ea40b4b52b311bf72c63d79fc771444db998d0cca42abf2670c170eadb"
+  },
+  "outputs/step9/predictive_2014.csv": {
+   "class": "reproduce_copy",
+   "copy": "outputs/reproduce/step9/predictive_2014.csv",
+   "sha256": "3ab3cf436a998edca4e1d346bf8b8eab8edcd96498bd496a52d7d736adcade63"
+  },
+  "outputs/step9/reliability_2014.png": {
+   "class": "historical",
+   "sha256": "02afe9e5114c5e342a6799cf3002bc216bfb833d95f4a0d38d5ae1974984b87b"
+  },
+  "outputs/step9/reliability_bins_hgb_2014.csv": {
+   "class": "reproduce_copy",
+   "copy": "outputs/reproduce/step9/reliability_bins_hgb_2014.csv",
+   "sha256": "b4a8e43526d33d360940997a069d2210f301dd6fb4f1d036217a7eaa9f093c21"
+  },
+  "outputs/step9/reliability_bins_logit_2014.csv": {
+   "class": "reproduce_copy",
+   "copy": "outputs/reproduce/step9/reliability_bins_logit_2014.csv",
+   "sha256": "f6bc8ca8500628f6de1973fef4a7a3adb6795eb451f80b385f092a60e513fa91"
+  },
+  "outputs/step9/success_categories_2014.csv": {
+   "class": "reproduce_copy",
+   "copy": "outputs/reproduce/step9/success_categories_2014.csv",
+   "sha256": "19465115cb537990a738967d3bd03cb66f72e3bf7bf00906f83891434ee6254f"
+  },
+  "outputs/step9/test_opened_log.json": {
+   "class": "historical",
+   "sha256": "b2ecf6bd0471c2d3c9bec60c26522e2aee527ab101537e890b6b6f7f22b88a77"
+  },
+  "outputs/step9_dryrun_2013/bootstrap_contrasts_2013.csv": {
+   "class": "regenerated",
+   "sha256": "ec63aaed1b5f93bf7d718211c7aac4c558a94f0ba37f12ce71093fde1e0ad22f"
+  },
+  "outputs/step9_dryrun_2013/dryrun_summary.json": {
+   "class": "volatile",
+   "expected_json": {
+    "bootstrap_draws": 1000,
+    "categories": {
+     "AI adds economic value": false,
+     "AI adds predictive but not economic value": false,
+     "Platform pricing hard to beat": false,
+     "Simpler model preferable": true
+    },
+    "fg_merged": true,
+    "fit_loans": 66037,
+    "fit_years": [
+     2010,
+     2011,
+     2012
+    ],
+    "label": "dry run",
+    "logit_converged": true,
+    "runtime_seconds": 44.7,
+    "test_loans": 100422,
+    "test_year": 2013
+   },
+   "ignored_keys": [
+    "runtime_seconds"
+   ],
+   "sha256": "6ace5ba85a76763c59b1fb4392b7529248c1a9db1e7b3542ad1c9117025247ef"
+  },
+  "outputs/step9_dryrun_2013/financial_2013_q80.csv": {
+   "class": "regenerated",
+   "sha256": "a80d1505ad7b5e9dce85d898615300cab8a7660641f3b3bce991bd4d234aaa80"
+  },
+  "outputs/step9_dryrun_2013/predictive_2013.csv": {
+   "class": "regenerated",
+   "sha256": "65887b7719eb96d7baf86cc7fedebba18051c5fd05cf3590ec845cedf6b6f879"
+  },
+  "outputs/step9_dryrun_2013/reliability_2013.png": {
+   "class": "regenerated",
+   "sha256": "c60f3da687c7d4076aa8b8b926b52a794dd17995ead5e2f6906fe9a7830cdad7"
+  },
+  "outputs/step9_dryrun_2013/reliability_bins_hgb_2013.csv": {
+   "class": "regenerated",
+   "sha256": "eaf38700d2ba0d1777c07a69f8742e64a180436b26b80f28b0f3d4630ae558fb"
+  },
+  "outputs/step9_dryrun_2013/reliability_bins_logit_2013.csv": {
+   "class": "regenerated",
+   "sha256": "63e933d43740399e10ce9ec9fcc6f5dd851c99824a898651b982bcc38bcfd243"
+  },
+  "outputs/step9_dryrun_2013/success_categories_2013.csv": {
+   "class": "regenerated",
+   "sha256": "4e82eec932e943afa6d295602ae6305e68ca917f2f097a8310c01e6d77cc42f5"
+  }
+ },
+ "stages": [
+  "step5",
+  "step6",
+  "step7",
+  "step9_dryrun",
+  "step9_reproduce",
+  "step10",
+  "step11_dryrun",
+  "step11_reproduce",
+  "step12",
+  "step13",
+  "presentation"
+ ]
+}
